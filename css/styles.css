@@ -37,6 +37,10 @@
     padding: 1.5rem;
 }
 
+#about p a {
+    color: black;
+}
+
 /*
 #education {
     margin-top: 3rem;
