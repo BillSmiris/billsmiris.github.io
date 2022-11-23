@@ -1,0 +1,104 @@
+#hero {
+    background-color: beige;
+    padding: 6rem 1.5rem 6rem 1.5rem;
+}
+
+.info-section {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    height: 100vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.info-section div.container{
+    position: relative;
+    height: 100%;
+}
+
+.info-section-gray {
+    background-color: lightgray;
+}
+
+#about {
+    background-image: url("../media/images/about.jpg");
+}
+
+#about p { 
+    font-size: 1.2rem;
+    height: 70%;
+    overflow: auto;
+    background-color: rgb(245, 245, 220, .8);
+    border-radius: 3rem;
+    padding: 1.5rem;
+}
+
+/*
+#education {
+    margin-top: 3rem;
+}*/
+
+#work {
+    background-image: url("../media/images/work.jpg");
+}
+
+/*#projects {
+    margin-top: 3rem;
+}*/
+
+#info{
+    background-image: url("../media/images/info.jpg");
+}
+
+a.next-section-arrow {
+    font-size: 7rem;
+    position: absolute;
+    right: 0rem;
+    bottom: 0rem;
+    border-radius: 50%;
+    height: 7rem;
+    width: 7rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    -webkit-transition: background-color 150ms linear;
+    -ms-transition: background-color 150ms linear;
+    transition: background-color 150ms linear;
+}
+
+a.next-section-arrow-light {
+    color: lightgray;
+}
+
+a.next-section-arrow-dark {
+    color: #343a40;
+}
+
+a.next-section-arrow:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+footer .container{
+    position: relative;
+}
+
+#top-link {
+    position: absolute;
+    right: 3rem;
+    color: white;
+}
+
+a.footer-icon-link {
+    color: white;
+    margin: .5rem;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+#copyright-band {
+    background-color: rgba(0, 0, 0, 0.2);
+}
