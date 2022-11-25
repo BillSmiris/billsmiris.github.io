@@ -58,7 +58,7 @@ a.next-section-arrow:hover {
 
 /* --- about section classes start --- */
 #about {
-    background-image: url("../media/images/about.jpg");
+    background-image: url("../media/images/backgrounds/about.jpg");
 }
 
 #about p { 
@@ -81,13 +81,6 @@ a.next-section-arrow:hover {
     height: 70%;
 }
 
-.edu-element {
-    height: 100%;
-    background-color: white;
-    border-radius: 3rem;
-    padding: 1.5rem;
-}
-
 .edu-row {
     height: 50%;
 }
@@ -101,6 +94,24 @@ a.next-section-arrow:hover {
     .edu-row {
         height: 100%;
     }
+}
+
+.edu-element {
+    height: 100%;
+    background-color: white;
+    border-radius: 3rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-col {
+    border-right: 1px solid black;
+}
+
+.logo-img {
+    width: 100%;
 }
 
 .h100p {
@@ -123,7 +134,7 @@ a.next-section-arrow:hover {
 
 /* --- work section classes start --- */
 #work {
-    background-image: url("../media/images/work.jpg");
+    background-image: url("../media/images/backgrounds/work.jpg");
 }
 /* --- work section classes end --- */
 
@@ -134,11 +145,11 @@ a.next-section-arrow:hover {
 
 /* --- info section classes start --- */
 #info{
-    background-image: url("../media/images/info.jpg");
+    background-image: url("../media/images/backgrounds/info.jpg");
 }
 
 .info-circle-div{
-    padding-top: 9rem;
+    padding-top: 5rem;
 }
 
 .info-circle {
@@ -189,5 +200,10 @@ a.footer-icon-link {
 
 #copyright-band {
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+a.footer-bootstrap-link {
+    color: white;
+    text-decoration: none;
 }
 /* --- footer classes end --- */
