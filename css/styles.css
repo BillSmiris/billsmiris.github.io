@@ -250,3 +250,15 @@ a.footer-bootstrap-link {
     text-decoration: none;
 }
 /* --- footer classes end --- */
+
+.project-card-container {
+    height: 70%;
+}
+
+.project-card-container .card {
+    height: 90%;
+}
+
+.card-img-top {
+    height: 40%;
+}
