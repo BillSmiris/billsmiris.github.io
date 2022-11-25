@@ -85,7 +85,7 @@ a.next-section-arrow:hover {
     height: 50%;
 }
 
-@media only screen and (max-width: 767px) { 
+@media only screen and (max-width: 767px), (max-height: 839px) { 
     .edu-row-container {
         overflow-y: auto;
         overflow-x: hidden;
@@ -164,6 +164,13 @@ a.next-section-arrow:hover {
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-width: 767px){ 
+    .info-circle-div {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .service-check {
