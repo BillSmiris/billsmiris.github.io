@@ -3,6 +3,8 @@
     padding: 6rem 1.5rem 6rem 1.5rem;
 }
 
+
+/* --- section classes start --- */
 .info-section {
     padding-top: 5rem;
     padding-bottom: 3rem;
@@ -51,8 +53,10 @@ a.next-section-arrow-dark {
 a.next-section-arrow:hover {
     background-color: rgba(0, 0, 0, .2);
 }
+/* --- section classes end --- */
 
 
+/* --- about section classes start --- */
 #about {
     background-image: url("../media/images/about.jpg");
 }
@@ -69,11 +73,66 @@ a.next-section-arrow:hover {
 #about p a {
     color: black;
 }
+/* --- about section classes end --- */
 
+
+/* --- education section classes start --- */
+.edu-row-container { 
+    height: 70%;
+}
+
+.edu-element {
+    height: 100%;
+    background-color: white;
+    border-radius: 3rem;
+    padding: 1.5rem;
+}
+
+.edu-row {
+    height: 50%;
+}
+
+@media only screen and (max-width: 767px) { 
+    .edu-row-container {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .edu-row {
+        height: 100%;
+    }
+}
+
+.h100p {
+    height: 100%;
+}
+
+.op80 {
+    opacity: 80%;
+}
+
+.op60 {
+    opacity: 60%;
+}
+
+.op40 {
+    opacity: 40%;
+}
+/* --- education section classes end --- */
+
+
+/* --- work section classes start --- */
 #work {
     background-image: url("../media/images/work.jpg");
 }
+/* --- work section classes end --- */
 
+
+/* --- projects section classes start --- */
+/* --- projects section classes end --- */
+
+
+/* --- info section classes start --- */
 #info{
     background-image: url("../media/images/info.jpg");
 }
@@ -107,7 +166,10 @@ a.next-section-arrow:hover {
     margin-top: -1rem; 
     display: block;
 }
+/* --- info section classes end --- */
 
+
+/* --- footer classes start --- */
 footer .container{
     position: relative;
 }
@@ -128,3 +190,4 @@ a.footer-icon-link {
 #copyright-band {
     background-color: rgba(0, 0, 0, 0.2);
 }
+/* --- footer classes end --- */
