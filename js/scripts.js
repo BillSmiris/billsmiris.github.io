@@ -1,0 +1,57 @@
+var projects_container = document.querySelector('.project-card-container .carousel-inner');
+
+var projects = [
+    {
+        "id":"smart-home-thesis",
+        "title": "Smart Home Thesis",
+        "summary": "Thesis about smart home."
+    },
+    {
+        "id":"parking",
+        "title": "ParKing",
+        "summary": "Parking android app."
+    },
+    {
+        "id":"sandbox",
+        "title": "Unity Scripting Demo",
+        "summary": "Small unity script demo."
+    },
+    {
+        "id":"EDU",
+        "title": "Educational App",
+        "summary": "edu app text"
+    },
+    {
+        "id":"cslab",
+        "title": "cslab",
+        "summary": "cslab text"
+    }
+];
+
+//for (let i = 0; i < projects.length; i++) {
+//    let project = projects[i];
+//    projects_container.innerHTML += '<div class="col"><div class="card"><img src="media/images/backgrounds/default.png" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">' + project.title + '</h5><p class="card-text">' + project.summary + '</p><a href="#" class="btn btn-primary">Read more</a></div></div></div>';
+//}
+
+var carousel_item_no = Math.ceil(projects.length / 3);
+
+for (let i = 0; i < carousel_item_no; i++) {
+    let html_to_add = '';
+    if (i > 0) {
+        html_to_add += '<div class="carousel-item">';
+    }
+    else {
+        html_to_add += '<div class="carousel-item active">';
+    }
+    html_to_add += '<div class="row row-cols-1 row-cols-md-3">';
+    for (let j = 0 + 3 * i; j < 3 * (i + 1); j++) {
+        if(typeof projects[j] == 'undefined'){
+            break;
+        }
+        let project = projects[j];
+        html_to_add += '<div class="col"><div class="card"><img src="media/images/backgrounds/default.png" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">' + project.title + '</h5><p class="card-text">' + project.summary + '</p><a href="#" class="btn btn-primary">Read more</a></div></div></div>';
+    }
+    html_to_add += '</div></div>';
+    //let project = projects[i];
+    projects_container.innerHTML += html_to_add;
+}

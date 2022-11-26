@@ -255,6 +255,22 @@ a.footer-bootstrap-link {
     height: 70%;
 }
 
+.project-card-container .carousel {
+    width: 100%;
+}
+
+.project-card-container .carousel-inner {
+    height: 100%;
+}
+
+.project-card-container .carousel-item {
+    height: 100%;
+}
+
+.project-card-container .carousel-item .row{
+    height: 100%;
+}
+
 .project-card-container .card {
     height: 90%;
 }
