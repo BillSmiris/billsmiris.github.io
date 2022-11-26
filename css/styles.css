@@ -176,6 +176,39 @@ a.next-section-arrow:hover {
 
 
 /* --- projects section classes start --- */
+
+.project-card-container {
+    height: 70%;
+}
+
+.project-card-container .card {
+    height: 90%;
+}
+
+.project-card-container .card-img-top {
+    height: 40%;
+}
+
+.project-card-container .card .card-body {
+    height: 60%;
+}
+
+.project-card-container .card div.content {
+    height: 80%;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.project-card-container .carousel-control-prev {
+    height: fit-content;
+    top:50%;
+}
+
+.project-card-container .carousel-control-next {
+    height: fit-content;
+    top:50%;
+}
+
 /* --- projects section classes end --- */
 
 
@@ -251,34 +284,10 @@ a.footer-bootstrap-link {
 }
 /* --- footer classes end --- */
 
-.project-card-container {
-    height: 70%;
-}
-
-.project-card-container .card {
-    height: 90%;
-}
-
-.project-card-container .card-img-top {
-    height: 40%;
-}
-
-.project-card-container .card .card-body {
-    height: 60%;
-}
-
-.project-card-container .card div.content {
-    height: 80%;
-    margin-bottom: 1rem;
-    overflow: hidden;
-}
-
-.project-card-container .carousel-control-prev {
-    height: fit-content;
-    top:50%;
-}
-
-.project-card-container .carousel-control-next {
-    height: fit-content;
-    top:50%;
+.mobile-version-placeholder {
+    color: darkred;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 25%;
+    text-align: center;
 }
