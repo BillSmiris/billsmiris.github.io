@@ -23,6 +23,16 @@ var projects = [
         "id":"cslab",
         "title": "cslab",
         "summary": "cslab text"
+    },
+    {
+        "id":"cslab",
+        "title": "cslab",
+        "summary": "cslab text"
+    },
+    {
+        "id":"cslab",
+        "title": "cslab",
+        "summary": "cslab text"
     }
 ];
 

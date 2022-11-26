@@ -181,6 +181,10 @@ a.next-section-arrow:hover {
     height: 70%;
 }
 
+.project-card-container .carousel {
+    width: 100%;
+}
+
 .project-card-container .card {
     height: 90%;
 }
@@ -189,7 +193,7 @@ a.next-section-arrow:hover {
     height: 40%;
 }
 
-.project-card-container .card .card-body {
+.project-card-container .card-body {
     height: 60%;
 }
 
@@ -207,6 +211,16 @@ a.next-section-arrow:hover {
 .project-card-container .carousel-control-next {
     height: fit-content;
     top:50%;
+}
+
+@media only screen and (max-height: 900px) {
+    .project-card-container .card {
+        height: 60%;
+    }
+
+    .project-card-container .card div.content {
+        height: 70%;
+    }
 }
 
 /* --- projects section classes end --- */
