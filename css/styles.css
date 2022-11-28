@@ -61,6 +61,26 @@ a.next-section-arrow:hover {
     background-image: url("../media/images/backgrounds/about.jpg");
 }
 
+.mytabs {
+    margin-left: 3rem;
+    margin-bottom: 1px;
+    border: none;
+}
+
+.mytabs .nav-link{
+    background-color: rgb(245, 245, 220, .6);
+    border: none;
+    color: #495057;
+}
+
+.mytabs .nav-link:hover{
+    color: black;
+}
+
+.mytabs .nav-link.active {
+    background-color: rgb(245, 245, 220, .8);
+}
+
 #about p { 
     font-size: 1.2rem;
     height: 70%;
@@ -73,6 +93,12 @@ a.next-section-arrow:hover {
 #about p a {
     color: black;
 }
+
+#about-skills .h4 {
+    display: block;
+    padding-top: 1rem;
+}
+
 /* --- about section classes end --- */
 
 

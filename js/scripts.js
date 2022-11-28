@@ -58,3 +58,25 @@ for (let i = 0; i < carousel_item_no; i++) {
     html_to_add += '</div></div>';
     projects_container.innerHTML += html_to_add;
 }
+
+var active_tab = false;
+
+document.getElementById('summary-tab-btn').addEventListener('click', function() {
+    if(active_tab){
+        document.getElementById('skills-tab-btn').classList.remove('active');
+        this.classList.add('active');
+        document.getElementById('about-skills').classList.add('d-none');
+        document.getElementById('about-summary').classList.remove('d-none');
+        active_tab = false;
+    }
+});
+
+document.getElementById('skills-tab-btn').addEventListener('click', function() {
+    if(!active_tab){
+        document.getElementById('summary-tab-btn').classList.remove('active');
+        this.classList.add('active');
+        document.getElementById('about-summary').classList.add('d-none');
+        document.getElementById('about-skills').classList.remove('d-none');
+        active_tab = true;
+    }
+});
