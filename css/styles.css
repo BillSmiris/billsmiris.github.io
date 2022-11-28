@@ -229,6 +229,13 @@ a.next-section-arrow:hover {
     overflow: hidden;
 }
 
+.project-card-container .card .btn {
+   position: absolute;
+   bottom: 1rem;
+   left: 1rem;
+}
+
+
 .project-card-container .carousel-control-prev {
     height: fit-content;
     top:50%;
@@ -247,6 +254,15 @@ a.next-section-arrow:hover {
     .project-card-container .card div.content {
         height: 70%;
     }
+}
+
+#project-modal img {
+    height: 17rem;
+    border-radius: 2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
 }
 
 /* --- projects section classes end --- */

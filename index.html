@@ -231,6 +231,30 @@
         </section>
     </main>
 
+    <button type="button" id="openModalBtn" class="d-none" data-bs-toggle="modal" data-bs-target="#project-modal"></button>
+    <div class="modal fade modal-lg" id="project-modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="project-title">CSLab Website</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="media/images/backgrounds/default.png" alt="...">
+                    <div id="project-get"></div>
+                    <p><strong>Technologies used:</strong>  <i id="project-technologies"></i></p>
+                    <p id="project-summary"></p>
+                    <h5>Project points</h5>
+                    <ul id="project-points">
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="bg-dark text-center text-white">
         <div class="container p-4 pb-0">
             <a href="#" id="top-link">Top</a>
