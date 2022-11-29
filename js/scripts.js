@@ -3,7 +3,7 @@ var projects = [
         "id":"smart-home-thesis",
         "title": "Smart Home University Thesis",
         "summary": "This is my university thesis. The topic is smart home systems. The system of the project consist of a smart home hub web app and a protype RGB light smart device.",
-        "get": "<b>Github</b>: <a href=\"https://github.com/BillSmiris/University-Thesis-Smart-Home\">https://github.com/BillSmiris/University-Thesis-Smart-Home</a>",
+        "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/University-Thesis-Smart-Home\">https://github.com/BillSmiris/University-Thesis-Smart-Home</a>",
         "technologies": "Blazor Webassembly, C#, Python, Raspberry Pi, HTML5, CSS3, JS, PostgreSQL",
         "points": [
             "Smart home application developed for my university thesis.",
@@ -21,7 +21,7 @@ var projects = [
         "id":"parking",
         "title": "ParKing",
         "summary": "Parking android application. Through the application, users can quickly view parking facilities that are near them and information about them, allowing them to compare the facilities quckly and fine the one that best suits them.",
-        "get": "<b>Github</b>: <a href=\"https://github.com/BillSmiris/ParKing\">https://github.com/BillSmiris/ParKing</a>",
+        "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/ParKing\">https://github.com/BillSmiris/ParKing</a>",
         "technologies": "Android Studio, Java, Google Firebase",
         "points": [
             "Parking Android application made for a university project.",
@@ -50,7 +50,7 @@ var projects = [
         "id":"edu1821",
         "title": "Educational App",
         "summary": "Educational application made for university project.Through the application, users can learn about the faces of the Greek War of Independence and evaluate their knowledge throgh tests. Desktop and web version available.",
-        "get": "<b>Github</b>: <a href=\"https://github.com/BillSmiris/Educational-Application\">https://github.com/BillSmiris/Educational-Application</a>",
+        "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/Educational-Application\">https://github.com/BillSmiris/Educational-Application</a>",
         "technologies": "WPF, ASP.NET, C#, HTML5, CSS3, JS, PostgreSQL",
         "points": [
             "Educational application made for a university project.",
@@ -93,7 +93,7 @@ for (let i = 0; i < carousel_item_no; i++) {
             break;
         }
         let project = projects[j];
-        html_to_add += '<div class="col"><div class="card"><img src="media/images/backgrounds/default.png" class="card-img-top" alt="..."><div class="card-body"><div class="content"><h5 class="card-title">' + project.title + '</h5><p class="card-text">' + project.summary + '</p></div><button href="#" class="btn btn-dark" onClick="openProjectModal(' + j + ')">Read more</button></div></div></div>';
+        html_to_add += '<div class="col"><div class="card"><img src="media/images/projects/' + project.id + '.jpg" class="card-img-top" alt="..."><div class="card-body"><div class="content"><h5 class="card-title">' + project.title + '</h5><p class="card-text">' + project.summary + '</p></div><button href="#" class="btn btn-dark" onClick="openProjectModal(' + j + ')">Read more</button></div></div></div>';
     }
     html_to_add += '</div></div>';
     console.log(html_to_add);
@@ -126,6 +126,7 @@ var openModalBtn = document.getElementById('openModalBtn');
 
 function openProjectModal(i){
     document.getElementById('project-title').innerHTML = projects[i].title;
+    document.getElementById('project-img').src = 'media/images/projects/' + projects[i].id + '.jpg';
     document.getElementById('project-get').innerHTML = projects[i].get;
     document.getElementById('project-technologies').innerHTML = projects[i].technologies;
     document.getElementById('project-summary').innerHTML = projects[i].summary;
