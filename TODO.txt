@@ -1,1 +1,0 @@
-remake project cards(simpler dom tree and text truncate. make them simple divs with gap)
