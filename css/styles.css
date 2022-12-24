@@ -217,6 +217,7 @@ a.next-section-arrow:hover {
 
 .project-card-container .card-img-top {
     height: 40%;
+    object-fit: cover;
 }
 
 .project-card-container .card-body {
@@ -229,12 +230,18 @@ a.next-section-arrow:hover {
     overflow: hidden;
 }
 
+.project-card-container .card .card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .project-card-container .card .btn {
    position: absolute;
    bottom: 1rem;
    left: 1rem;
 }
-
 
 .project-card-container .carousel-control-prev {
     height: fit-content;
@@ -257,7 +264,7 @@ a.next-section-arrow:hover {
 }
 
 #project-modal img {
-    height: 17rem;
+    height: 20rem;
     border-radius: 2rem;
     display: block;
     margin-left: auto;
