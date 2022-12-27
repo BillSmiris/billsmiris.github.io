@@ -1,4 +1,4 @@
-/*var projects = [
+var projects = [
     {
         "id":"smart-home-thesis",
         "title": "Smart Home University Thesis",
@@ -74,14 +74,7 @@
             "Performed various update and maintainance tasks after deployment."
         ]
     }
-];*/
-
-var projects;
-fetch('https://github.com/BillSmiris/billsmiris.github.io/blob/main/content/projects.json')
-  .then(res => res.json())
-  .then(json => {
-    projects = json;
-  })
+];
 
 var projects_container = document.querySelector('.project-card-container .carousel-inner');
 var carousel_item_no = Math.ceil(projects.length / 3);
