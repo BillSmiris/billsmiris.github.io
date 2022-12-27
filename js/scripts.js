@@ -77,7 +77,7 @@
 ];*/
 
 var projects;
-fetch('https://bioinfobot.github.io/data/2017-05.json')
+fetch('https://github.com/BillSmiris/billsmiris.github.io/blob/main/content/projects.json')
   .then(res => res.json())
   .then(json => {
     projects = json;
