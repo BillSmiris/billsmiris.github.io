@@ -284,6 +284,15 @@ a.next-section-arrow:hover {
     padding-top: 5rem;
 }
 
+.test-info-circle-div{
+    height: 100%;
+    padding-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
 .info-circle {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-size: 2rem;
@@ -302,6 +311,12 @@ a.next-section-arrow:hover {
     .info-circle-div {
         display: flex;
         justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 1400px){
+    .info-circle:nth-child(even) {
+        align-self: center;
     }
 }
 

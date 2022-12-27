@@ -1,4 +1,4 @@
-/*var projects = [
+[
     {
         "id":"smart-home-thesis",
         "title": "Smart Home University Thesis",
@@ -74,73 +74,4 @@
             "Performed various update and maintainance tasks after deployment."
         ]
     }
-];*/
-
-var projects;
-fetch('https://bioinfobot.github.io/data/2017-05.json')
-  .then(res => res.json())
-  .then(json => {
-    projects = json;
-  })
-
-var projects_container = document.querySelector('.project-card-container .carousel-inner');
-var carousel_item_no = Math.ceil(projects.length / 3);
-
-for (let i = 0; i < carousel_item_no; i++) {
-    let html_to_add = '';
-    if (i > 0) {
-        html_to_add += '<div class="carousel-item h100p">';
-    }
-    else {
-        html_to_add += '<div class="carousel-item h100p active">';
-    }
-    html_to_add += '<div class="row row-cols-1 row-cols-md-3 h100p">';
-    for (let j = 0 + 3 * i; j < 3 * (i + 1); j++) {
-        if(typeof projects[j] == 'undefined'){
-            break;
-        }
-        let project = projects[j];
-        html_to_add += '<div class="col"><div class="card"><img src="media/images/projects/' + project.id + '.jpg" class="card-img-top" alt="..."><div class="card-body"><div class="content"><h5 class="card-title">' + project.title + '</h5><p class="card-text">' + project.summary + '</p></div><button href="#" class="btn btn-dark" onClick="openProjectModal(' + j + ')">Read more</button></div></div></div>';
-    }
-    html_to_add += '</div></div>';
-    console.log(html_to_add);
-    projects_container.innerHTML += html_to_add;
-}
-
-var active_tab = false;
-
-document.getElementById('summary-tab-btn').addEventListener('click', function() {
-    if(active_tab){
-        document.getElementById('skills-tab-btn').classList.remove('active');
-        this.classList.add('active');
-        document.getElementById('about-skills').classList.add('d-none');
-        document.getElementById('about-summary').classList.remove('d-none');
-        active_tab = false;
-    }
-});
-
-document.getElementById('skills-tab-btn').addEventListener('click', function() {
-    if(!active_tab){
-        document.getElementById('summary-tab-btn').classList.remove('active');
-        this.classList.add('active');
-        document.getElementById('about-summary').classList.add('d-none');
-        document.getElementById('about-skills').classList.remove('d-none');
-        active_tab = true;
-    }
-});
-
-var openModalBtn = document.getElementById('openModalBtn');
-
-function openProjectModal(i){
-    document.getElementById('project-title').innerHTML = projects[i].title;
-    document.getElementById('project-img').src = 'media/images/projects/' + projects[i].id + '.jpg';
-    document.getElementById('project-get').innerHTML = projects[i].get;
-    document.getElementById('project-technologies').innerHTML = projects[i].technologies;
-    document.getElementById('project-summary').innerHTML = projects[i].summary;
-    let points = document.getElementById('project-points');
-    points.innerHTML = '';
-    for(let j = 0; j < projects[i].points.length; j++){
-        points.innerHTML += '<li>' + projects[i].points[j] + '</li>';
-    }
-    openModalBtn.click();
-}
+]
