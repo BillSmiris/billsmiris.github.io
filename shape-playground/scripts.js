@@ -6,6 +6,7 @@ var palettes = document.querySelectorAll(".palette");
 var shapeBtns = document.querySelectorAll(".shape-btn");
 var toolsElement = document.getElementById("tools");
 var ctxMenu = document.getElementById("ctxMenu");
+var toolBtns = null;
 
 //helper variables
 var ctxShow = false;
@@ -61,8 +62,9 @@ for(let i = 0; i < backgroundColorList.length; i++){
 }
 
 for(var tool in tools){
-    toolsElement.innerHTML += `<button onclick="toggleTool('${tool}')">${tools[tool].icon}</button>`
+    toolsElement.innerHTML += `<button class="toolBtn" data-tool="${tool}" onclick="toggleTool(event)">${tools[tool].icon}</button>`
 }
+toolBtns = document.querySelectorAll(".toolBtn");
 
 onmousemove = (e) => {
     if(e.clientX < controls.offsetWidth){
@@ -94,7 +96,12 @@ onclick = (e) => {
         }
         return;
     }
-    //hideCtxMenu();
+    if(!e.target.classList.contains("object")){
+        hideCtxMenu();
+        if(selectObject){
+            deselectObject(initX, initY);
+        }
+    }
 }
 
 onkeydown = (e) => {
@@ -213,14 +220,19 @@ function setBackgroundColor(c){
     preview.style.backgroundColor = c;
 }
 
-function toggleTool(tool){
+function toggleTool(e){
+    let tool  = e.target.dataset.tool;
     if(tools[tool].enabled){
         tools[tool].enabled = false;
+        e.target.style.backgroundColor = "#ddd";
         return;
     }
-    for(var t in tools){
-        tools[t].enabled = false;
+    for(let i = 0; i < toolBtns.length; i++){
+        tools[toolBtns[i].dataset.tool].enabled = false;
+        toolBtns[i].style.backgroundColor = "#ddd";
     }
+
+    e.target.style.backgroundColor = "lightgreen";
     tools[tool].enabled = true;
 }
 
