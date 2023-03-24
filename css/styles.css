@@ -167,10 +167,21 @@ a.next-section-arrow:hover {
 .work-div { 
     font-size: 1.2rem;
     height: 70%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgb(255, 255, 255, .8);
     border-radius: 3rem;
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-div-content {
+    margin: 1rem 0;
+    overflow: auto;
+    height : 90%;
+    width: 100%;
 }
 
 .work-div ul {
