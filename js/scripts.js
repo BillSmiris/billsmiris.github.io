@@ -96,31 +96,33 @@ for (let i = 0; i < carousel_item_no; i++) {
         html_to_add += '<div class="col"><div class="card"><img src="media/images/projects/' + project.id + '.jpg" class="card-img-top" alt="..."><div class="card-body"><div class="content"><h5 class="card-title">' + project.title + '</h5><p class="card-text">' + project.summary + '</p></div><button href="#" class="btn btn-dark" onClick="openProjectModal(' + j + ')">Read more</button></div></div></div>';
     }
     html_to_add += '</div></div>';
-    console.log(html_to_add);
     projects_container.innerHTML += html_to_add;
 }
 
-var active_tab = false;
+//about section tabs start
+var aboutTabBtns = document.querySelectorAll(".about-tabs .nav-link");
+var scrollableDiv = document.querySelector('.about-scrollable-div .scrollable-div-content');
 
-document.getElementById('summary-tab-btn').addEventListener('click', function() {
-    if(active_tab){
-        document.getElementById('skills-tab-btn').classList.remove('active');
-        this.classList.add('active');
-        document.getElementById('about-skills').classList.add('d-none');
-        document.getElementById('about-summary').classList.remove('d-none');
-        active_tab = false;
-    }
-});
+var activeTab = document.getElementById(aboutTabBtns[0].dataset.target);
+var activeTabBtn = aboutTabBtns[0];
 
-document.getElementById('skills-tab-btn').addEventListener('click', function() {
-    if(!active_tab){
-        document.getElementById('summary-tab-btn').classList.remove('active');
-        this.classList.add('active');
-        document.getElementById('about-summary').classList.add('d-none');
-        document.getElementById('about-skills').classList.remove('d-none');
-        active_tab = true;
-    }
-});
+for(let i = 0; i < aboutTabBtns.length; i++){
+    aboutTabBtns[i].addEventListener('click', toggleTab);
+}
+
+function toggleTab(e){
+    activeTabBtn.classList.remove('active');
+    activeTab.classList.add('d-none');
+
+    activeTabBtn = e.target;
+    activeTab = document.getElementById(activeTabBtn.dataset.target);
+    
+    activeTabBtn.classList.add('active');
+    scrollableDiv.scrollTop = 0;
+    activeTab.classList.remove('d-none');
+}
+
+//about section tabs end
 
 var openModalBtn = document.getElementById('openModalBtn');
 

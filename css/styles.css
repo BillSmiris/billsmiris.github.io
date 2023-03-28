@@ -1,6 +1,6 @@
 #hero {
     background-color: beige;
-    padding: 6rem 1.5rem 6rem 1.5rem;
+    padding: 6rem 1rem;
 }
 
 
@@ -26,32 +26,65 @@
     background-color: lightgray;
 }
 
-a.next-section-arrow {
-    font-size: 7rem;
+a.section-control {
     position: absolute;
-    right: 0rem;
     bottom: 0rem;
     border-radius: 50%;
     height: 7rem;
     width: 7rem;
     display: flex;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     -webkit-transition: background-color 150ms linear;
     -ms-transition: background-color 150ms linear;
     transition: background-color 150ms linear;
 }
 
-a.next-section-arrow-light {
+a.section-control-light {
     color: lightgray;
 }
 
-a.next-section-arrow-dark {
+a.section-control-dark {
     color: #343a40;
 }
 
-a.next-section-arrow:hover {
+a.section-control:hover {
     background-color: rgba(0, 0, 0, .2);
+}
+
+a.section-control:last-of-type {
+    right: 7rem;
+}
+
+a.section-control:first-of-type {
+    right: 0rem;
+}
+
+a.next-section-arrow {
+    font-size: 7rem;
+}
+
+a.frame-section {
+    font-size: 4rem;
+}
+
+.scrollable-div {
+    font-size: 1.2rem;
+    height: 70%;
+    overflow: hidden;
+    border-radius: 3rem;
+    /* padding: 1.5rem; */
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scrollable-div-content {
+    padding: 0 1rem;
+    overflow: auto;
+    height : 90%;
+    width: 100%;
 }
 /* --- section classes end --- */
 
@@ -61,44 +94,47 @@ a.next-section-arrow:hover {
     background-image: url("../media/images/backgrounds/about.jpg");
 }
 
-.mytabs {
+.about-tabs {
     margin-left: 3rem;
     margin-bottom: 1px;
     border: none;
 }
 
-.mytabs .nav-link{
+.about-tabs .nav-link{
     background-color: rgb(245, 245, 220, .6);
     border: none;
     color: #495057;
 }
 
-.mytabs .nav-link:hover{
+.about-tabs .nav-link:hover{
     color: black;
 }
 
-.mytabs .nav-link.active {
-    background-color: rgb(245, 245, 220, .8);
+.about-tabs .nav-link.active {
+    background-color: rgb(245, 245, 220, .9);
 }
 
-#about p { 
-    font-size: 1.2rem;
-    height: 70%;
-    overflow: auto;
-    background-color: rgb(245, 245, 220, .8);
-    border-radius: 3rem;
-    padding: 1.5rem;
+.about-scrollable-div { 
+    background-color: rgb(245, 245, 220, .9);
 }
 
-#about p a {
+.about-scrollable-div a {
     color: black;
 }
 
-#about-skills .h4 {
+#about-summary {
+    text-align: justify;
+}
+
+#about-skills h2 {
     display: block;
     padding-top: 1rem;
+    font-size: 1.5rem;
 }
 
+#about-skills h2:first-child {
+    padding-top: 0;
+}
 /* --- about section classes end --- */
 
 
@@ -164,31 +200,15 @@ a.next-section-arrow:hover {
     
 }
 
-.work-div { 
-    font-size: 1.2rem;
-    height: 70%;
-    overflow: hidden;
-    background-color: rgb(255, 255, 255, .8);
-    border-radius: 3rem;
-    /* padding: 1.5rem; */
-    padding: 0 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.work-scrollable-div { 
+    background-color: rgb(255, 255, 255, .9);
 }
 
-.work-div-content {
-    margin: 1rem 0;
-    overflow: auto;
-    height : 90%;
-    width: 100%;
-}
-
-.work-div ul {
+.work-scrollable-div ul {
     list-style-type: none;
 }
 
-.work-div hr {
+.work-scrollable-div hr {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }

@@ -14,8 +14,9 @@
         <div class="text-center" id="hero">
             <h1 class="display-5 fw-bold">Welcome to my website!</h1>
             <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4">My name is Vasilis Smyris. I am a full-stack software developer from Greece. In this website you can find information about me, my education background, work experience and projects I have made.</p>
+                <p class="lead mb-4">My name is Vasilis Smyris. I am a full-stack software developer from Greece, with a passion for efficient, scalable and user-friendly software.</p>
                 <a class="btn btn-dark" href="#contact" role="button">Contact me</a>
+                <a class="btn btn-dark" href="shape-playground/" role="button">Shape Playground</a>
             </div>
         </div>
     </header>
@@ -51,50 +52,57 @@
         <section class="info-section" id="about">
             <div class="container">
                 <h1>About Me</h1>
-                <ul class="nav nav-tabs mytabs">
+                <ul class="nav nav-tabs about-tabs">
                     <li class="nav-item">
-                      <button class="nav-link active" id="summary-tab-btn">Summary</button>
+                      <button class="nav-link active" data-target="about-summary">Summary</button>
                     </li>
                     <li class="nav-item">
-                      <button class="nav-link" id="skills-tab-btn">Skills</button>
+                      <button class="nav-link" data-target="about-skills">Skills</button>
                     </li>
                 </ul>
-                <p>
-                    <span id="about-summary">
-                        Hi. My name is Vasilis Smiris. 
-                        I am a full-stack software developer from Athens, Greece, that has recently started his career as a software developer. I also hold a BSc in Computer Science from the University of Piraeus.
-                        Through university and personal projects, I have gained experience in various programming languages, software development frameworks and other technologies. 
-                        Aside from technical knowledge, I have also gained a theoretical understanding of the principles of programming, 
-                        of what makes a piece of software good and of how different technologies work and can be combined together to create complex applications. 
-                        I consider myself being able to design and implement both the front-end and the back-end of an application and having an understanding of what external infrasructure, 
-                        both in software and hardware, might be needed to make it deployable and usable. 
-                        Through the years, I have mostly worked with the .NET Framework and the C# programming language, 
-                        having built several desktop and web applications using the plethora of project types that the framework provides. 
-                        My second most worked language is Python, which I greatly value for prototyping and experimenting with complex scientific subjects. 
-                        Lately, I have been dabbling into other technological subjects that have gained my interest, like solving low-level problems using C++, game development and electronics. 
-                        In my free time, I enjoy studying history and geography, getting informed about advancements in various scientific fields and infrasturcture projects, doing photo and video editing, cycling and traveling. 
-                        Feel free to <a href="#contact">contact</a> me.
-                    </span>
-                    <span id="about-skills" class="d-none">
-                        <span class="h4">Programming Languages</span>
-                        Python, JavaScript, C#, C++
-                        <span class="h4">Front End</span>
-                        HTML5, CSS3, Bootstrap 4
-                        <span class="h4">Web Frameworks</span>
-                        Django, ASP.NET, Blazor WebAssembly
-                        <span class="h4">Desktop Frameworks</span>
-                        Windows Forms, WPF
-                        <span class="h4">Operating Systems</span>
-                        Windows, Debian Linux and derivatives
-                        <span class="h4">Database Systems</span>
-                        PostgreSQL, MySQL, MongoDB
-                        <span class="h4">Editing Software</span>
-                        Photoshop, Sony Vegas
-                        <span class="h4">Version Control</span>
-                        Git
-                    </span>
-                </p>
-                <a class="next-section-arrow next-section-arrow-light" href="#education"><i class="bi bi-arrow-down-short"></i></a>
+                <div class="scrollable-div about-scrollable-div">
+                    <div class="scrollable-div-content">
+                        <p id="about-summary">
+                            &nbsp;&nbsp;&nbsp;&nbsp;Hello, I am Vasilis Smyris, a full-stack software developer based in Athens, Greece. 
+                            I hold a BSc in Computer Science from the University of Piraeus and have recently embarked on my career in software development.
+                            Over the years, I have gained extensive experience in various programming languages, software development frameworks, and other technologies, 
+                            both through my academic studies and personal projects. I possess a solid theoretical understanding of the principles of programming and a deep 
+                            appreciation for the design of efficient, scalable and user-friendly software and the authoring of clean, reusable and maintainable code. My skillset includes front-end and back-end development, as well 
+                            as a keen understanding of the infrastructure, in software and hardware, required to deploy complex applications. I specialize in the .NET Framework 
+                            and the C# programming language, with a portfolio of desktop and web applications built using the plethora of the framework's project types.
+                            In addition, I have extensive experience with Python, which I use primarily for prototyping and exploring complex scientific topics. Recently, 
+                            I have been expanding my horizons by delving into low-level problem-solving with C++, game development, and electronics.<br/> 
+                            &nbsp;&nbsp;&nbsp;&nbsp;The most definitive culmination of the knowledge and skills I have gathered through the years, has been my university thesis, which touches upon smart home applications. The application developed for 
+                            this project consists of a web server that works as the smart-home hub, which serves the users with a UI through web browser and facilitates the communication between them and
+                            the various smart devices in the network, developed using Blazor Webassembly, and a prototype smart RGB lamp device, built using a Raspberry Pi computer, Python and basic electronics knowledge.
+                            The highlight of the project is the creation of a protocol of communication between the devices and the server, which can facilitate the administration and control of the devices and the
+                            creation of UI pages for these purposes, independent of device type.<br/> 
+                            &nbsp;&nbsp;&nbsp;&nbsp;I currently work as an IT Implementation Consultant at NCR Corporation, providing technical support for ATM solutions on a day-to-day basis.
+                            When I'm not working, I enjoy studying history and geography, editing photos and videos, working out, learning new languages, collecting 
+                            and traveling. I'm always eager to collaborate on new projects, so please don't hesitate to <a href="#contact">get in touch</a>.
+                        </p>
+                        <div id="about-skills" class="d-none">
+                            <h2>Programming Languages</h2>
+                            Python, JavaScript, C#, C++
+                            <h2>Front End</h2>
+                            HTML5, CSS3, Bootstrap 4
+                            <h2>Web Frameworks</h2>
+                            Django, ASP.NET, Blazor WebAssembly
+                            <h2>Desktop Frameworks</h2>
+                            Windows Forms, WPF
+                            <h2>Operating Systems</h2>
+                            Windows, Debian Linux and derivatives
+                            <h2>Database Systems</h2>
+                            PostgreSQL, MySQL, MongoDB
+                            <h2>Editing Software</h2>
+                            Photoshop, Sony Vegas
+                            <h2>Version Control</h2>
+                            Git
+                        </div>
+                    </div>
+                </div>
+                <a class="section-control next-section-arrow section-control-light" href="#education"><i class="bi bi-arrow-down-short"></i></a>
+                <a class="section-control frame-section section-control-light" href="#about"><i class="bi bi-app"></i></a>
             </div>
         </section>
         <section class="info-section info-section-gray" id="education">
@@ -132,14 +140,15 @@
                         </div>
                     </div>
                 </div>
-                <a class="next-section-arrow next-section-arrow-dark" href="#work"><i class="bi bi-arrow-down-short"></i></a>
+                <a class="section-control next-section-arrow section-control section-control-dark" href="#work"><i class="bi bi-arrow-down-short"></i></a>
+                <a class="section-control frame-section section-control-dark" href="#education"><i class="bi bi-app"></i></a>
             </div>
         </section>
         <section class="info-section" id="work">
             <div class="container">
                 <h1>Work Experience</h1>
-                <div class="work-div">
-                    <div class="work-div-content">
+                <div class="scrollable-div work-scrollable-div">
+                    <div class="scrollable-div-content">
                         <span class="work-organization">University of Piraeus <span class="work-yr">(October 2018 - October 2020)</span></span>
                         <span class="work-position">System Administrator in the Computer Science Department’s Laboratories</span>
                         <ul>
@@ -160,11 +169,12 @@
                         <span class="work-organization">NCR Corporation <span class="work-yr">(January 2023 - Present)</span></span>
                         <span class="work-position">IT Implementation Consultant</span>
                         <ul>
-                            <!--<li>-  Data entry and vetting for electricity contracts.</li>-->
+                            <li>- Provided technical support for ATM solutions on a day-to-day basis.</li>
                         </ul>
                         </div>
                 </div>
-                <a class="next-section-arrow next-section-arrow-light" href="#projects"><i class="bi bi-arrow-down-short"></i></a>
+                <a class="section-control next-section-arrow section-control-light" href="#projects"><i class="bi bi-arrow-down-short"></i></a>
+                <a class="section-control frame-section section-control-light" href="#work"><i class="bi bi-app"></i></a>
             </div>
         </section>
         <section class="info-section info-section-gray" id="projects">
@@ -187,6 +197,7 @@
                         </button>
                     </div>
                 </div>
+                <a class="section-control frame-section section-control-dark" href="#projects"><i class="bi bi-app"></i></a>
             </div>
         </section>
     </main>
