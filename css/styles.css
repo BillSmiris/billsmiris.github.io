@@ -3,6 +3,16 @@
     padding: 6rem 1rem;
 }
 
+.lang-item:hover {
+    cursor: pointer;
+}
+
+.lang-flag {
+    padding-right: 0.5rem;
+    height: 1.5rem;
+    float: left;
+    pointer-events: none;
+}
 
 /* --- section classes start --- */
 .info-section {
@@ -387,7 +397,11 @@ a.footer-icon-link {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-a.footer-bootstrap-link {
+.freepik {
+    color: white;
+}
+
+.footer-bootstrap-link {
     color: white;
     text-decoration: none;
 }

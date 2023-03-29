@@ -12,11 +12,11 @@
 <body>
     <header>
         <div class="text-center" id="hero">
-            <h1 class="display-5 fw-bold">Welcome to my website!</h1>
+            <h1 class="display-5 fw-bold translatable" data-translationTag="welcome">Welcome to my website!</h1>
             <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4">My name is Vasilis Smyris. I am a full-stack software developer from Greece, with a passion for efficient, scalable and user-friendly software.</p>
-                <a class="btn btn-dark" href="mailto:billyssmiris@gmail.com?subject=Request for CV&body=Dear Vasili,%0D%0A%0D%0AI am interested in learning more about your qualifications and experience, and would greatly appreciate it if you could send me a copy of your CV.%0D%0A%0D%0AThank you for your time and consideration.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]" role="button">Request CV</a>
-                <a class="btn btn-dark" href="#contact" role="button">Contact me</a>
+                <p class="lead mb-4 translatable" data-translationTag="heroText">My name is Vasilis Smyris. I am a full-stack software developer from Greece, with a passion for efficient, scalable and user-friendly software.</p>
+                <a class="btn btn-dark translatable" data-translationTag="requestCV" href="mailto:billyssmiris@gmail.com?subject=Request for CV&body=Dear Vasili,%0D%0A%0D%0AI am interested in learning more about your qualifications and experience, and would greatly appreciate it if you could send me a copy of your CV.%0D%0A%0D%0AThank you for your time and consideration.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]" role="button">Request CV</a>
+                <a class="btn btn-dark translatable" href="#contact" role="button" data-translationTag="contactMe">Contact me</a>
                 <a class="btn btn-dark" href="shape-playground/" role="button">Shape Playground</a>
             </div>
         </div>
@@ -24,7 +24,7 @@
 
     <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Vasilis Smyris</a>
+            <a class="navbar-brand translatable" href="#" data-translationTag="brandText">Vasilis Smyris</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,18 +33,25 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About Me</a>
+                        <a class="nav-link translatable" href="#about" data-translationTag="aboutMe">About Me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
+                        <a class="nav-link translatable" href="#education" data-translationTag="education">Education</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#work">Work Experience</a>
+                        <a class="nav-link translatable" href="#work" data-translationTag="workExperience">Work Experience</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
+                        <a class="nav-link translatable" href="#projects" data-translationTag="projects">Projects</a>
                     </li>
                 </ul>
+                <div class="dropdown">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="langDropDownBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                      
+                    </button>
+                    <ul id="lang-list" class="dropdown-menu" aria-labelledby="langDropDownBtn">
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -52,18 +59,18 @@
     <main>
         <section class="info-section" id="about">
             <div class="container">
-                <h1>About Me</h1>
+                <h1 class="translatable" data-translationTag="aboutMe">About Me</h1>
                 <ul class="nav nav-tabs about-tabs">
                     <li class="nav-item">
-                      <button class="nav-link active" data-target="about-summary">Summary</button>
+                      <button class="nav-link active translatable" data-target="about-summary" data-translationTag="summary">Summary</button>
                     </li>
                     <li class="nav-item">
-                      <button class="nav-link" data-target="about-skills">Skills</button>
+                      <button class="nav-link translatable" data-target="about-skills" data-translationTag="skills">Skills</button>
                     </li>
                 </ul>
                 <div class="scrollable-div about-scrollable-div">
                     <div class="scrollable-div-content">
-                        <p id="about-summary">
+                        <p id="about-summary" class="translatable" data-translationTag="aboutSummaryText">
                             &nbsp;&nbsp;&nbsp;&nbsp;Hello, I am Vasilis Smyris, a full-stack software developer based in Athens, Greece. 
                             I hold a BSc in Computer Science from the University of Piraeus and have recently embarked on my career in software development.
                             Over the years, I have gained extensive experience in various programming languages, software development frameworks, and other technologies, 
@@ -82,7 +89,7 @@
                             When I'm not working, I enjoy studying history and geography, editing photos and videos, working out, learning new languages, collecting 
                             and traveling. I'm always eager to collaborate on new projects, so please don't hesitate to <a href="#contact">get in touch</a>.
                         </p>
-                        <div id="about-skills" class="d-none">
+                        <div id="about-skills" class="d-none translatable" data-translationTag="aboutSkillsText">
                             <h2>Programming Languages</h2>
                             Python, JavaScript, C#, C++
                             <h2>Front End</h2>
@@ -108,7 +115,7 @@
         </section>
         <section class="info-section info-section-gray" id="education">
             <div class="container h100p">
-                <h1>Education</h1>
+                <h1 class="translatable" data-translationTag="education">Education</h1>
                 <div class="edu-row-container">
                     <div class="row edu-row mb-3">
                         <div class="col-md-6 mb-3 mb-md-0">
@@ -147,7 +154,7 @@
         </section>
         <section class="info-section" id="work">
             <div class="container">
-                <h1>Work Experience</h1>
+                <h1 class="translatable" data-translationTag="workExperience">Work Experience</h1>
                 <div class="scrollable-div work-scrollable-div">
                     <div class="scrollable-div-content">
                         <span class="work-organization">University of Piraeus <span class="work-yr">(October 2018 - October 2020)</span></span>
@@ -180,7 +187,7 @@
         </section>
         <section class="info-section info-section-gray" id="projects">
             <div class="container">
-                <h1>Projects</h1>
+                <h1 class="translatable" data-translationTag="projects">Projects</h1>
                 <div class="d-flex d-md-none mobile-version-placeholder">
                     Mobile version unavailable.
                 </div>
@@ -221,7 +228,7 @@
                     </ul>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary translatable" data-bs-dismiss="modal" data-translationTag="close">Close</button>
                 </div>
             </div>
         </div>
@@ -229,8 +236,8 @@
 
     <footer class="bg-dark text-center text-white">
         <div class="container p-4 pb-0">
-            <a href="#" id="top-link">Top</a>
-            Contact me:
+            <a class="translatable" href="#" id="top-link" data-translationTag="top">Top</a>
+            <span class="translatable" data-translationTag="contactMe">Contact me</span>:
             <section class="mb-4" id="contact">
                 <a class="footer-icon-link" href="https://www.linkedin.com/in/vasilis-smiris-1010401ab/" target="_blank">
                     <i class="bi bi-linkedin"></i>
@@ -245,6 +252,7 @@
         </div>
         <div class="text-center p-3" id="copyright-band">
           © 2022 Copyright: Vasilis Smyris
+          <div>Flag icons provided by <a class="freepik" href="https://www.flaticon.com/packs/international-flags-6" target="_blank">Freepik</a></div>
           <div>Powered by <a class="footer-bootstrap-link" href="https://getbootstrap.com/" target="_blank"><i class="bi bi-bootstrap-fill"></i> Bootstrap</a></div>
         </div>
     </footer>

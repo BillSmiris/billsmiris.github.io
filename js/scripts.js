@@ -76,6 +76,20 @@ var projects = [
     }
 ];
 
+var langs = [
+    {
+        'code':'enUS',
+        'dropDownHTML':'English(US)'
+    },
+    {
+        'code':'enUK',
+        'dropDownHTML':'English(UK)'
+    },
+    {
+        'code':'el',
+        'dropDownHTML':'Ελληνικά'
+    }
+]
 
 //build projects carousel start
 const projectsContainer = document.querySelector('.project-card-container .carousel-inner');
@@ -95,7 +109,7 @@ for (let i = 0; i < carouselItemNo; i++) {
             break;
         }
         let project = projects[j];
-        htmlToAdd += `<div class="col"><div class="card"><img src="media/images/projects/${project.id}.jpg" class="card-img-top" alt="..."><div class="card-body"><div class="content"><h5 class="card-title">${project.title}</h5><p class="card-text">${project.summary}</p></div><button href="#" class="btn btn-dark" onClick="openProjectModal(${j})">Read more</button></div></div></div>`;
+        htmlToAdd += `<div class="col"><div class="card"><img src="media/images/projects/${project.id}.jpg" class="card-img-top" alt="..."><div class="card-body"><div class="content"><h5 class="card-title">${project.title}</h5><p class="card-text">${project.summary}</p></div><button href="#" class="btn btn-dark translatable" data-translationTag="readMore" onClick="openProjectModal(${j})">Read more</button></div></div></div>`;
     }
     htmlToAdd += '</div></div>';
     projectsContainer.innerHTML += htmlToAdd;
@@ -150,3 +164,51 @@ function openProjectModal(i){
     openModalBtn.click();
 }
 //handle project modal content end
+
+//build lang list start
+const langDropDownBtn = document.getElementById('langDropDownBtn');
+
+const langList = document.getElementById('lang-list');
+
+const translatables = document.querySelectorAll('.translatable');
+
+for(let i = 0; i < langs.length; i++){
+    let newLi = document.createElement('li');
+
+    let newSpan = document.createElement('span');
+    newSpan.classList.add('dropdown-item', 'lang-item');
+    newSpan.innerHTML = langs[i].dropDownHTML;
+    newSpan.dataset["lang"] = langs[i].code;
+    newSpan.addEventListener('click', setLang);
+
+    let newImg = document.createElement('img');
+    newImg.src = `media/images/langs/${langs[i].code}.png`;
+    newImg.classList.add('lang-flag');
+
+    newSpan.appendChild(newImg);
+
+    newLi.appendChild(newSpan);
+    langList.appendChild(newLi);
+    if(i == 0){
+        newSpan.click();
+    }
+}
+
+async function setLang(e){
+    langDropDownBtn.innerHTML = e.target.innerHTML;
+    let lang = e.target.dataset.lang;
+    let translation = await getTranslationFile(lang);
+    for(let i = 0; i < translatables.length; i++){
+        let t = translation[translatables[i].dataset.translationtag];
+        if(t){
+            translatables[i].innerHTML = t;
+        }
+    }
+}
+
+async function getTranslationFile(code){
+    let response = await fetch(`translations/${code}.json`);
+    let json =  await response.json();
+    return json;
+}
+//build lang list end
