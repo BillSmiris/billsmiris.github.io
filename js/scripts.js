@@ -76,32 +76,35 @@ var projects = [
     }
 ];
 
-var projects_container = document.querySelector('.project-card-container .carousel-inner');
-var carousel_item_no = Math.ceil(projects.length / 3);
 
-for (let i = 0; i < carousel_item_no; i++) {
-    let html_to_add = '';
+//build projects carousel start
+const projectsContainer = document.querySelector('.project-card-container .carousel-inner');
+const carouselItemNo = Math.ceil(projects.length / 3);
+
+for (let i = 0; i < carouselItemNo; i++) {
+    let htmlToAdd = '';
     if (i > 0) {
-        html_to_add += '<div class="carousel-item h100p">';
+        htmlToAdd += '<div class="carousel-item h100p">';
     }
     else {
-        html_to_add += '<div class="carousel-item h100p active">';
+        htmlToAdd += '<div class="carousel-item h100p active">';
     }
-    html_to_add += '<div class="row row-cols-1 row-cols-md-3 h100p">';
+    htmlToAdd += '<div class="row row-cols-1 row-cols-md-3 h100p">';
     for (let j = 0 + 3 * i; j < 3 * (i + 1); j++) {
         if(typeof projects[j] == 'undefined'){
             break;
         }
         let project = projects[j];
-        html_to_add += '<div class="col"><div class="card"><img src="media/images/projects/' + project.id + '.jpg" class="card-img-top" alt="..."><div class="card-body"><div class="content"><h5 class="card-title">' + project.title + '</h5><p class="card-text">' + project.summary + '</p></div><button href="#" class="btn btn-dark" onClick="openProjectModal(' + j + ')">Read more</button></div></div></div>';
+        htmlToAdd += `<div class="col"><div class="card"><img src="media/images/projects/${project.id}.jpg" class="card-img-top" alt="..."><div class="card-body"><div class="content"><h5 class="card-title">${project.title}</h5><p class="card-text">${project.summary}</p></div><button href="#" class="btn btn-dark" onClick="openProjectModal(${j})">Read more</button></div></div></div>`;
     }
-    html_to_add += '</div></div>';
-    projects_container.innerHTML += html_to_add;
+    htmlToAdd += '</div></div>';
+    projectsContainer.innerHTML += htmlToAdd;
 }
+//build projects carousel end
 
 //about section tabs start
-var aboutTabBtns = document.querySelectorAll(".about-tabs .nav-link");
-var scrollableDiv = document.querySelector('.about-scrollable-div .scrollable-div-content');
+const aboutTabBtns = document.querySelectorAll(".about-tabs .nav-link");
+const scrollableDiv = document.querySelector('.about-scrollable-div .scrollable-div-content');
 
 var activeTab = document.getElementById(aboutTabBtns[0].dataset.target);
 var activeTabBtn = aboutTabBtns[0];
@@ -124,18 +127,26 @@ function toggleTab(e){
 
 //about section tabs end
 
-var openModalBtn = document.getElementById('openModalBtn');
+//handle project modal content start
+const openModalBtn = document.getElementById('openModalBtn');
+
+const projectTitle = document.getElementById('project-title');
+const projectImg = document.getElementById('project-img');
+const projectGet = document.getElementById('project-get');
+const projectTechnologies = document.getElementById('project-technologies');
+const projectSummary = document.getElementById('project-summary');
+const projectPoints = document.getElementById('project-points');
 
 function openProjectModal(i){
-    document.getElementById('project-title').innerHTML = projects[i].title;
-    document.getElementById('project-img').src = 'media/images/projects/' + projects[i].id + '.jpg';
-    document.getElementById('project-get').innerHTML = projects[i].get;
-    document.getElementById('project-technologies').innerHTML = projects[i].technologies;
-    document.getElementById('project-summary').innerHTML = projects[i].summary;
-    let points = document.getElementById('project-points');
-    points.innerHTML = '';
+    projectTitle.innerHTML = projects[i].title;
+    projectImg.src = 'media/images/projects/' + projects[i].id + '.jpg';
+    projectGet.innerHTML = projects[i].get;
+    projectTechnologies.innerHTML = projects[i].technologies;
+    projectSummary.innerHTML = projects[i].summary;
+    projectPoints.innerHTML = '';
     for(let j = 0; j < projects[i].points.length; j++){
-        points.innerHTML += '<li>' + projects[i].points[j] + '</li>';
+        projectPoints.innerHTML += `<li>${projects[i].points[j]}</li>`;
     }
     openModalBtn.click();
 }
+//handle project modal content end
