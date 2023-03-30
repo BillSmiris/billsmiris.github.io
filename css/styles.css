@@ -313,6 +313,10 @@ a.frame-section {
     margin-bottom: 2rem;
 }
 
+.project-card-container .card-text {
+    text-align: justify;
+}
+
 /* --- projects section classes end --- */
 
 
@@ -413,4 +417,8 @@ a.footer-icon-link {
     font-weight: bold;
     padding: 25%;
     text-align: center;
+}
+
+#project-technologies {
+    font-style: italic;
 }

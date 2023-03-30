@@ -14,5 +14,115 @@
     "aboutSkillsText":"<h2>Γλώσσες Προγραμματισμού</h2>Python, JavaScript, C#, C++<h2>Front End</h2>HTML5, CSS3, Bootstrap 4<h2>Web Frameworks</h2>Django, ASP.NET, Blazor WebAssembly<h2>Desktop Frameworks</h2>Windows Forms, WPF<h2>Λειτουργικά Συστύματα</h2>Windows, Debian Linux και παράγωγα<h2>Συστύματα βάσεων δεδομένων</h2>PostgreSQL, MySQL, MongoDB<h2>Λογισμικό Editing</h2>Photoshop, Sony Vegas<h2>Version Control</h2>Git",
     "readMore":"Περισσότερα",
     "close":"Κλείσιμο",
-    "top":"Κορυφή"
+    "top":"Κορυφή",
+    "workList": [
+        {
+            "organization":"Πανεπιστήμιο Πειραιώς",
+            "yr":"Οκτώβριος 2018 - Οκτώβριος 2020",
+            "position":"System Administrator στα ερηαστήρια υπολογιστών του Τμήματος Πληροφορικής",
+            "tasks":[
+                "Εκτέλεσα καθημερινές εργασίες διαχείρισης.",
+                "Σχεδίασα και υλοποίησα το front-end της ιστοσελίδας των εργαστηρίων του Τμήματος Πληροφορικής(<a href=\"https://cslab.unipi.gr/\">cslab.unipi.gr</a>).",
+                "Συντήρησα την ιστοσελίδα των εργαστηρίων του Τμήματος Πληροφορικής.",
+                "Δούλεψα στο back-end of της πλατφόρμας διαχείρισης αιθουσών των εργαστηρίων του Τμήματος Πληροφορικής.",
+                "Δούλεψα στο front-end of της πλατφόρμας διαχείρισης αιθουσών των εργαστηρίων του Τμήματος Πληροφορικής.",
+                "Έφτιαξα αφίσες και ψηφιακό προωθητικό υλικό για event."
+            ]
+        },
+        {
+            "organization":"Volton",
+            "yr":"Ιούλιος 2020 - Δεκέμβριος 2022",
+            "position":"Contract Management Administrator",
+            "tasks":[
+                "Καταχώρηση και έλεγχος δεδομένων για συμβόλαια ηλεκτρικής ενέργειας."
+            ]
+        },
+        {
+            "organization":"NCR Corporation",
+            "yr":"Ιανουάριος 2023 - Σήμερα",
+            "position":"IT Implementation Consultant",
+            "tasks":[
+                "Παροχή τεχνικής υποστήριξης για λύσεις ATM σε καθημερινή βάση."
+            ]
+        }
+    ],
+    "projectsList":[
+        {
+            "id":"smart-home-thesis",
+            "title": "Πτυχιακή Eργασία Smart Home",
+            "summary": "Η πτυχιακή μου εργασία. Το θέμα είναι τα συστήματα έξυπνου σπιτιού. Το σύστημα της εργασίας αποτελείται από μία web εφαρμογή smart home hub και μια πρωτότυπη έξυπνη συσκευή λάμπας RGB.",
+            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/University-Thesis-Smart-Home\">https://github.com/BillSmiris/University-Thesis-Smart-Home</a>",
+            "technologies": "Blazor Webassembly, C#, Python, Raspberry Pi, HTML5, CSS3, JS, PostgreSQL",
+            "points": [
+                "Σύστημα smart home που αναπτύχθηκε για την πτυχιακή μου εργασία.",
+                "Το σύστημα αποτελείται από μία web εφαρμογή, που λειτουργεί ως το smart home hub, και μια πρωτότυπη συσκευή λάμπας RGB.",
+                "Το σύστημα είναι σχεδιασμένο για να λειτουργεί σε τοπικό δίκτυο και να χρησιμοποιείται μέσω του web browser οποιασδήποτε συσκευής για τον έλεγχο ενός οικοσυστήματος έξυπνων συσκευών.",
+                "Η πρωτότυπη έξυπνη συσκευή αποτελείται από έναν υπολογιστή Raspberry Pi, ο οποίος τρέχει ένα script Python που καθορίζει τη συμπεριφορά της συσκευής, και ένα βασικό κύκλωμα λάμπας RGB συνδεδεμένο σε αυτόν.",
+                "Το script της έξυπνης συσκευής έχει σχεδιαστεί έτσι ώστε να αποτελεί blueprint για τη δημιουργία script για άλλους τύπους συσκευών.",
+                "Το smart home hub έχει σχεδιαστεί έτσι ώστε να επιτρέπει των έλεγχου μεταβλητού αριθμού συσκευών.",
+                "Το smart home hub προβάλλει controls για τη συσκευή με βάση τις διαθέσιμες ρυθμίσεις της συσκευής και τους τύπους ρυθμίσεων που υποστηρίζει το σύστημα.",
+                "Η επικοινωνία μεταξύ των συσκευών και του smart home hub πραγματοποιείται μέσω της χρήσης του πρωτοκόλλου WebSockets.",
+                "Συμπεριλαμβάνονται features, όπως λογαριασμοί χρηστών και εναλλαγή μεταξύ φωτεινού και σκούρου θέματος."
+            ]
+        },
+        {
+            "id":"parking",
+            "title": "ParKing",
+            "summary": "Parking Android app. The app enables users to easily view nearby parking facilities and relevant information, allowing them to quickly compare the options and find the one that best suits them.",
+            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/ParKing\">https://github.com/BillSmiris/ParKing</a>",
+            "technologies": "Android Studio, Java, Google Firebase",
+            "points": [
+                "Parking Android application made for a university project.",
+                "Users can view parking facilities around them on a map or in list format.",
+                "Users can quickly check and compare price, sercives and availability of parking facilities.",
+                "Application utilizes Google services and smartphone sensors like Google Maps, Google Firebase and GPS."
+            ]
+        },
+        {
+            "id":"sandbox",
+            "title": "Unity Scripting Demo",
+            "summary": "Ένα μικρό demo φτιαγμένο με σκοπό την εξοικείωση με το scripting στο Unity. Στο demo, οι παίκτες μπορούν να χειριστούν έναν χαρακτήρα από πρώτο-πρόσωπο και να αλληλεπιδράσουν με διάφορα αντικείμενα στο περιβάλλον.",
+            "get": "Το demo είναι διαθέσιμο <a href=\"https://drive.google.com/file/d/1_4Cv_sLoWSC2ogZUZnQPO2hfmqGqB20G/view?usp=share_link\">εδώ</a>",
+            "technologies": "Unity, C#",
+            "points": [
+                "Μικρό project φτιαγμένο με σκοπό την εξοικίωση με το scripting στο  Unity game engine.",
+                "Το demo αποτελείται από ένα περιβάλλον με έναν παίκτη πρώτου προσώπου και διάφορες αλληλεπιδράσεις.",
+                "Ο παίκτης πρώτου προσώπου έχει διάφορες τυπικές λειτουργίες, όπως το να κινείται στο χώρο και να κοιτά γύρω του, να τρέχει, να αλλάζει στάση(όρθιος, σκυμμένος, πρηνηδόν) και να αλληλεπιδρά με διάφορα αντικείμενα στο περιβάλλον.",
+                "Οι αλληλεπιδράσεις πραγματοποιούνται μέσω ενός γενικευμένου framework αλληλεπίδρασης, που αποτελείται από την προβολή μια προτροπής στον παίκτη για μια αλληλεπίδραση και την ικανότητα να ενεργοποιήσει την αλληλεπίδραση.",
+                "Το γενικευμένο framework αλληλεπίδρασης μπορεί να επεκταθεί, για να υποστηρίξει τις ιδιαίτερες ανάγκες της κάθε αλληλεπίδρασης.",
+                "Οι αλληλεπιδράσεις που έχουν υλοποιηθεί περιλαμβάνουν τηλεμεταφορείς, πόρτες και ανελκυστήρες.",
+                "Τα script των αλληλεπιδράσεων μπορούν να δεχθούν διάφορες παραμέτρους που επηρεάζουν τη συμπεριφορά της αλληλεπίδρασης."
+            ]
+        },
+        {
+            "id":"edu1821",
+            "title": "Educational App",
+            "summary": "Educational application made for a university project.Through the application, users can learn about the faces of the Greek War of Independence and evaluate their knowledge via tests. Desktop and web version available.",
+            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/Educational-Application\">https://github.com/BillSmiris/Educational-Application</a>",
+            "technologies": "WPF, ASP.NET, C#, HTML5, CSS3, JS, PostgreSQL",
+            "points": [
+                "Educational application made for a university project.",
+                "Through the application, users can learn about the faces of the Greek War of Independence.",
+                "Application contains multiple-choice excercises, through which users can evaluate their knowledge.",
+                "Application has a desktop and a web version.",
+                "Application is designed so its content can be easily expanded upon and be adapted to other topics."
+            ]
+        },
+        {
+            "id":"cslab",
+            "title": "CSLab Website",
+            "summary": "Informational website made for the computer labs of the Department of Informatics of the University of Piraeus. Through the website, students can get informed about the operation of the labs and get access to university digital services.",
+            "get": "<b>URL:</b> <a href=\"https://cslab.unipi.gr\">https://cslab.unipi.gr</a>",
+            "technologies": "HTML5, CSS3, JS, Bootstrap4, Python, Django",
+            "points": [
+                "Website made by the Computer Labs Administrator Team of the Department of Informatics of the University of Piraeus.",
+                "Website used as an information point for the students of the Department of Informatics, through which they can be informed about the digital services that the university provides, the sevices of the department’s computer labs, the courses of the department and get updates on the operation of the computer labs.",
+                "Designed the front-end of the main and wiki pages of the website using Photoshop.",
+                "Developed the front-end using HTML, CSS, JS and Bootstrap4.",
+                "Performed various update and maintenance tasks after deployment."
+            ]
+        }
+    ],
+    "technologiesUsed":"Τεχνολογίες",
+    "projectPoints":"Σημεία του project"
  }
