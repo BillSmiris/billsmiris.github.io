@@ -1,3 +1,16 @@
+#loading-screen {
+    position: fixed;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #343a40;
+    z-index: 2000;
+}
+
 #hero {
     background-color: beige;
     padding: 6rem 1rem;
@@ -134,6 +147,7 @@ a.frame-section {
 
 #about-summary {
     text-align: justify;
+    hyphens: auto;
 }
 
 #about-skills h2 {
@@ -149,30 +163,23 @@ a.frame-section {
 
 
 /* --- education section classes start --- */
-.edu-row-container { 
+
+.edu-container{
     height: 70%;
-}
-
-.edu-row {
-    height: 50%;
-}
-
-@media only screen and (max-width: 767px), (max-height: 839px) { 
-    .edu-row-container {
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
-    .edu-row {
-        height: 100%;
-    }
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    overflow-y: auto;
 }
 
 .edu-element {
-    height: 100%;
+    width: 48%;
+    height: 48%;
     background-color: white;
     border-radius: 3rem;
     padding: 1.5rem;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -180,26 +187,27 @@ a.frame-section {
 
 .logo-col {
     border-right: 1px solid black;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.logo-img {
+.logo-img{
     width: 100%;
 }
 
-.h100p {
-    height: 100%;
+.info-col {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.op80 {
-    opacity: 80%;
-}
-
-.op60 {
-    opacity: 60%;
-}
-
-.op40 {
-    opacity: 40%;
+@media only screen and (max-width: 991px), (max-height: 839px) { 
+    .edu-element{
+        width: 100%;
+    }
 }
 /* --- education section classes end --- */
 
@@ -243,6 +251,10 @@ a.frame-section {
 
 
 /* --- projects section classes start --- */
+
+.h100p {
+    height: 100%;
+}
 
 .project-card-container {
     height: 70%;
@@ -320,65 +332,6 @@ a.frame-section {
 /* --- projects section classes end --- */
 
 
-/* --- info section classes start --- */
-#info{
-    background-image: url("../media/images/backgrounds/info.jpg");
-}
-
-.info-circle-div{
-    padding-top: 5rem;
-}
-
-.test-info-circle-div{
-    height: 100%;
-    padding-top: 5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-}
-
-.info-circle {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    font-size: 2rem;
-    padding: 1rem;
-    background-color: lightgray;
-    height: 17rem;
-    width: 17rem;
-    border-radius: 50%;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-@media only screen and (max-width: 767px){ 
-    .info-circle-div {
-        display: flex;
-        justify-content: center;
-    }
-}
-
-@media only screen and (min-width: 1400px){
-    .info-circle:nth-child(even) {
-        align-self: center;
-    }
-}
-
-.service-check {
-    display: block; 
-    font-size: 7rem; 
-    margin: -3rem;
-}
-
-.info-circle-span {
-    font-size: 4.2rem; 
-    margin-top: -1rem; 
-    display: block;
-}
-/* --- info section classes end --- */
-
-
 /* --- footer classes start --- */
 footer .container{
     position: relative;
@@ -422,3 +375,5 @@ a.footer-icon-link {
 #project-technologies {
     font-style: italic;
 }
+
+/*new edu test*/

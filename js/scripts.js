@@ -1,3 +1,15 @@
+var loadingScreen = document.getElementById('loading-screen');
+
+document.onreadystatechange = function() {
+    if (document.readyState !== "complete") {
+        document.querySelector("body").style.visibility = "hidden";
+        loadingScreen.style.visibility = "visible";
+    } else {
+        loadingScreen.style.display = "none";
+        document.querySelector("body").style.visibility = "visible";
+    }
+};
+
 var projects = null;
 
 var langs = [
@@ -14,6 +26,60 @@ var langs = [
         'dropDownHTML':'Ελληνικά'
     }
 ]
+
+//build education section start
+
+const eduDiv = document.querySelector('.edu-container');
+
+function buildEduList(eduList = null){
+    eduDiv.innerHTML = '';
+    let htmlToAdd = '';
+    let devMode = false;
+    if(!devMode && eduList){
+        for(let i = 0; i < eduList.length; i++){
+            let edu  = eduList[i];
+            htmlToAdd = `
+            <div class="edu-element">
+                <div class="row">
+                    <div class="logo-col">
+                        <a href="${edu.orgLink}" target="_blank">
+                            <img class="logo-img" src="media/images/logos/${edu.logo}" alt="${edu.logoAlt}">
+                        </a>
+                    </div>
+                    <div class="info-col">
+                        ${edu.html}
+                    </div>
+                </div>
+            </div>
+            `
+            eduDiv.innerHTML += htmlToAdd;
+        }
+    }
+    else{
+        for(let i = 0; i < 4; i++){
+            htmlToAdd = `
+            <div class="edu-element">
+                <div class="row">
+                    <div class="logo-col">
+                        <a href="https://www.unipi.gr/unipi/en/home-cs.html" target="_blank">
+                            <img class="logo-img" src="media/images/logos/unipi.jpg" alt="UNIPI_LOGO">
+                        </a>
+                    </div>
+                    <div class="info-col">
+                        <h2>University of Piraeus</h2>
+                        <h4>Department of Informatics</h4>
+                        <h5>Bachelor's Degree in Computer Science</h5>
+                        Grade: 8.20/10
+                    </div>
+                </div>
+            </div>
+            `
+            eduDiv.innerHTML += htmlToAdd;
+        }
+    }
+}
+
+//build education section end
 
 //build work section start
 const workDiv = document.querySelector(".work-scrollable-div > .scrollable-div-content");
@@ -169,6 +235,7 @@ async function getTranslationFile(code){
 
 function translationExtension(translation){
     projects = translation.projectsList;
+    buildEduList(translation.eduList);
     buildWorkList(translation.workList);
     buildProjectCarousel(translation);
 }

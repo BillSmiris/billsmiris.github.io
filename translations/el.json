@@ -5,7 +5,7 @@
     "requestCV":"Ζητήστε CV",
     "contactMe": "Επικοινωνήστε",
     "aboutMe":"Σχετικά",
-    "education": "Εκπαίδευση",
+    "education": "Εκπαίδευση & Πιστοποιήσεις",
     "workExperience": "Εμπειρία",
     "projects":"Projects",
     "summary":"Σύνοψη",
@@ -15,11 +15,31 @@
     "readMore":"Περισσότερα",
     "close":"Κλείσιμο",
     "top":"Κορυφή",
+    "eduList":[
+        {
+            "orgLink":"https://www.unipi.gr/unipi/en/home-cs.html",
+            "logo":"unipi.jpg",
+            "logoAlt":"UNIPI LOGO",
+            "html":"<h2>Πανεπιστήμιο Πειραιώς</h2><h4>Τμήμα Πληροφορικής</h4><h5>BSc στην Επιστήμη Υπολογιστών</h5>Βαθμός: 8.20/10"
+        },
+        {
+            "orgLink":"https://www.linkedin.com/in/vasilis-smiris-1010401ab/details/certifications/",
+            "logo":"linkedin.png",
+            "logoAlt":"LinkedIn In Logo",
+            "html":"<h2>LinkedIn&trade; Learning</h2> Ολοκλήρωση 14 courses πάνω σε HTML5, CSS3, JavaScript, AngularJS, C# και βέλτιστες πρακτικές.<br/><span>Δείτε τη λίστα πιστοποιήσεων <a href=\"https://www.linkedin.com/in/vasilis-smiris-1010401ab/details/certifications/\" target=\"_blank\">εδώ</a>.</span>"
+        },
+        {
+            "orgLink":"https://gfoss.eu/",
+            "logo":"gfoss.png",
+            "logoAlt":"GFOSS Logo",
+            "html":"<h2>GFOSS</h2><h4>Web Design and Web Development</h4><h5>Certificate ID: 6gB3WdXXYB</h5><span>Τρίμηνο course που κάλυψε τεχνολογίες web όπως HTML5, CSS3, JavaScript, Bootstrap4 and node.js.<br/>Δείτε την πιστοποίηση <a href=\"https://drive.google.com/file/d/1x6yNvosspBj2OX3osrFLutHvmVSoIIwJ/view?usp=share_link\" target=\"_blank\">εδώ</a>.</span>"
+        }
+    ],
     "workList": [
         {
             "organization":"Πανεπιστήμιο Πειραιώς",
             "yr":"Οκτώβριος 2018 - Οκτώβριος 2020",
-            "position":"System Administrator στα ερηαστήρια υπολογιστών του Τμήματος Πληροφορικής",
+            "position":"System Administrator στα εργαστήρια υπολογιστών του Τμήματος Πληροφορικής",
             "tasks":[
                 "Εκτέλεσα καθημερινές εργασίες διαχείρισης.",
                 "Σχεδίασα και υλοποίησα το front-end της ιστοσελίδας των εργαστηρίων του Τμήματος Πληροφορικής(<a href=\"https://cslab.unipi.gr/\">cslab.unipi.gr</a>).",
@@ -68,14 +88,14 @@
         {
             "id":"parking",
             "title": "ParKing",
-            "summary": "Parking Android app. The app enables users to easily view nearby parking facilities and relevant information, allowing them to quickly compare the options and find the one that best suits them.",
+            "summary": "Εφαρμογή Android για parking. Η εφαρμογή δίνει στους χρήστες τη δυνατότητα να βρίσκουν εύκολα εγκαταστάσεις parking που βρίσκονται κοντά τους και σχετικές πληροφορίες για αυτές, επιτρέποντάς τους να συγκρίνουν ταχύτατα τις διαθέσιμες επιλογές και να βρίσκουν αυτή που ταιριάζει καλύτερα στις ανάγκες τους.",
             "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/ParKing\">https://github.com/BillSmiris/ParKing</a>",
             "technologies": "Android Studio, Java, Google Firebase",
             "points": [
-                "Parking Android application made for a university project.",
-                "Users can view parking facilities around them on a map or in list format.",
-                "Users can quickly check and compare price, sercives and availability of parking facilities.",
-                "Application utilizes Google services and smartphone sensors like Google Maps, Google Firebase and GPS."
+                "Εφαρμογή Android για parking, ανεπτυγμένη για πανεπιστημιακή εργασία.",
+                "Οι χρήστες μπορούν να βλέπουν εγκαταστάσεις parking γύρω τους σε χάρτη ή σε μορφή λίστας.",
+                "Οι χρήστες μπορούν εύκολα και γρήγορα να βλέπουν και να συγκρίνουν τις τιμές, τις υπηρεσίες και τη διαθεσιμότητα των εγκαταστάσεων.",
+                "Η εφαρμογή χρησιμοποιεί Google services και αισθητήρες του κινητού, όπως Google Maps, Google Firebase και GPS."
             ]
         },
         {
@@ -96,30 +116,30 @@
         },
         {
             "id":"edu1821",
-            "title": "Educational App",
-            "summary": "Educational application made for a university project.Through the application, users can learn about the faces of the Greek War of Independence and evaluate their knowledge via tests. Desktop and web version available.",
+            "title": "Εκπαιδευτική Εφαρμογή",
+            "summary": "Εκπαιδευτική εφαρμογή, ανεπτυγμένη για πανεπιστημιακή εργασία. Μέσω της εφαρμογής, οι χρήστες μπορούν να μάθουν για τα πρόσωπα της Ελληνικής Επανάστασης και να αξιολογήσουν τη γνώση τους μέσω τεστ. Η εφαρμογή είναι διαθέσιμη σε εκδόσεις desktop και web.",
             "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/Educational-Application\">https://github.com/BillSmiris/Educational-Application</a>",
             "technologies": "WPF, ASP.NET, C#, HTML5, CSS3, JS, PostgreSQL",
             "points": [
-                "Educational application made for a university project.",
-                "Through the application, users can learn about the faces of the Greek War of Independence.",
-                "Application contains multiple-choice excercises, through which users can evaluate their knowledge.",
-                "Application has a desktop and a web version.",
-                "Application is designed so its content can be easily expanded upon and be adapted to other topics."
+                "Εκπαιδευτική εφαρμογή, ανεπτυγμένη για πανεπιστημιακή εργασία.",
+                "Μέσω της εφαρμογής, οι χρήστες μπορούν να μάθουν για τα πρόσωπα της Ελληνικής Επανάστασης.",
+                "Η εφαρμογή περιλαμβάνει ασκήσης πολλαπλής επιλογής, μέσω των οποίων οι χρήστες μπορούν να αξιολογήσουν τις γνώσεις τους.",
+                "Η εφαρμογή είναι διαθέσιμη σε εκδόσεις desktop και web.",
+                "Η εφαρμογή έχει σχεδιαστεί με τρόπο ώστε το περιεχόμενο της να μπορεί να επεκταθεί εύκολα και να προσαρμοστεί σε άλλα θέματα."
             ]
         },
         {
             "id":"cslab",
             "title": "CSLab Website",
-            "summary": "Informational website made for the computer labs of the Department of Informatics of the University of Piraeus. Through the website, students can get informed about the operation of the labs and get access to university digital services.",
+            "summary": "Ενημερωτική ιστοσελίδα για τα εργαστήρια υπολογιστών του Τμήματος Πληροφορικής του Πανεπιστημίου Πειραιώς. Μέσω της ιστοσελίδας, οι φοιτητές μπορούν να ενημερώνονται για τη λειτουργία των εργαστηρίων και να αποκτούν πρόσβαση στις ψηφιακές υπηρεσίες του πανεπιστημίου.",
             "get": "<b>URL:</b> <a href=\"https://cslab.unipi.gr\">https://cslab.unipi.gr</a>",
             "technologies": "HTML5, CSS3, JS, Bootstrap4, Python, Django",
             "points": [
-                "Website made by the Computer Labs Administrator Team of the Department of Informatics of the University of Piraeus.",
-                "Website used as an information point for the students of the Department of Informatics, through which they can be informed about the digital services that the university provides, the sevices of the department’s computer labs, the courses of the department and get updates on the operation of the computer labs.",
-                "Designed the front-end of the main and wiki pages of the website using Photoshop.",
-                "Developed the front-end using HTML, CSS, JS and Bootstrap4.",
-                "Performed various update and maintenance tasks after deployment."
+                "Ιστοσελίδα για τα εργαστήρια υπολογιστών του Τμήματος Πληροφορικής του Πανεπιστημίου Πειραιώς.",
+                "Η ιστοσελίδα χρησιμοπείται ως κέντρο ενημέρωσης για τους φοιτητές του Τμήματος Πληροφορικής, μέσω του οποίου μπορούν να πληροφορούνται για τις ψηφιακές υπηρεσίες που παρέχει το Πανεπιστήμιο, της υπηρεσίες των εργαστηρίων του, τα μαθήματα του τμήματος και να ενημερώνονται για τη λειτουργία των εργαστηρίων.",
+                "Σχεδίασα το front-end της κύριας σελίδας και του wiki με τη χρήση Photoshop.",
+                "Υλοποίησα το front-end χρησιμοποιόντας HTML, CSS, JS και Bootstrap4.",
+                "Εκτέλεσα διάφορες εργασίες ενημέρωσης και συντήρησης μετά το deployment."
             ]
         }
     ],
