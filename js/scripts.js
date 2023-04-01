@@ -1,4 +1,4 @@
-var loadingScreen = document.getElementById('loading-screen');
+const loadingScreen = document.getElementById('loading-screen');
 
 document.onreadystatechange = function() {
     if (document.readyState !== "complete") {
@@ -36,8 +36,9 @@ function buildEduList(eduList = null){
     let htmlToAdd = '';
     let devMode = false;
     if(!devMode && eduList){
+        let edu;
         for(let i = 0; i < eduList.length; i++){
-            let edu  = eduList[i];
+            edu  = eduList[i];
             htmlToAdd = `
             <div class="edu-element">
                 <div class="row">
@@ -89,9 +90,8 @@ function buildWorkList(workList){
     let work = null;
     for(let i = 0; i < workList.length; i++){
         work = workList[i];
-        console.warn(work);
         htmlToAdd += 
-        `<span class="work-organization">${work.organization} <span class="work-yr">(${work.yr}</span></span>
+        `<span class="work-organization">${work.organization} <span class="work-yr">(${work.yr})</span></span>
         <span class="work-position">${work.position}</span>
         <ul>`
         for(let j = 0; j < work.tasks.length; j++){
@@ -115,8 +115,9 @@ function buildProjectCarousel(translation = null){
     projectsContainer.innerHTML = '';
     let readMore = translation ? translation.readMore : "Read more";
     let carouselItemNo = Math.ceil(projects.length / 3);
+    let htmlToAdd;
     for (let i = 0; i < carouselItemNo; i++) {
-        let htmlToAdd = '';
+        htmlToAdd = '';
         if (i > 0) {
             htmlToAdd += '<div class="carousel-item h100p">';
         }
@@ -141,8 +142,8 @@ function buildProjectCarousel(translation = null){
 const aboutTabBtns = document.querySelectorAll(".about-tabs .nav-link");
 const scrollableDiv = document.querySelector('.about-scrollable-div .scrollable-div-content');
 
-var activeTab = document.getElementById(aboutTabBtns[0].dataset.target);
 var activeTabBtn = aboutTabBtns[0];
+var activeTab = document.getElementById(activeTabBtn.dataset.target);
 
 for(let i = 0; i < aboutTabBtns.length; i++){
     aboutTabBtns[i].addEventListener('click', toggleTab);
@@ -173,14 +174,15 @@ const projectSummary = document.getElementById('project-summary');
 const projectPoints = document.getElementById('project-points');
 
 function openProjectModal(i){
-    projectTitle.innerHTML = projects[i].title;
-    projectImg.src = 'media/images/projects/' + projects[i].id + '.jpg';
-    projectGet.innerHTML = projects[i].get;
-    projectTechnologies.innerHTML = projects[i].technologies;
-    projectSummary.innerHTML = projects[i].summary;
+    let project = projects[i];
+    projectTitle.innerHTML = project.title;
+    projectImg.src = 'media/images/projects/' + project.id + '.jpg';
+    projectGet.innerHTML = project.get;
+    projectTechnologies.innerHTML = project.technologies;
+    projectSummary.innerHTML = project.summary;
     projectPoints.innerHTML = '';
-    for(let j = 0; j < projects[i].points.length; j++){
-        projectPoints.innerHTML += `<li>${projects[i].points[j]}</li>`;
+    for(let j = 0; j < project.points.length; j++){
+        projectPoints.innerHTML += `<li>${project.points[j]}</li>`;
     }
     openModalBtn.click();
 }
