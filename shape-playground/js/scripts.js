@@ -41,6 +41,7 @@ var mxPrev = 0;
 var myPrev = 0;
 var dx;
 var dy;
+var biggestZIndex = 0;
 var argList = {
     rotation : 45
 }
@@ -69,6 +70,16 @@ var tools = {
     },
     "move" : {
         "icon" : `<i class="bi bi-arrows-move"></i>`,
+        "enabled" : false,
+        "options" : ""
+    },
+    "bringToFront" : {
+        "icon" : `<i class="bi bi-front"></i>`,
+        "enabled" : false,
+        "options" : ""
+    },
+    "sendToBack" : {
+        "icon" : `<i class="bi bi-back"></i>`,
         "enabled" : false,
         "options" : ""
     }
@@ -116,9 +127,10 @@ function lockDimensions() {
     dimensionY.disabled = !dimensionY.disabled;
     if(dimensionsLocked){
         shapeDimY = shapeDimX;
-        return;
     }
-    shapeDimY = dimensionY.value;
+    else{
+        shapeDimY = dimensionY.value;
+    }
     setPreview();
 } 
 
@@ -261,6 +273,7 @@ function addObject(){
     newObject.style.width = shapeDimX + "px";
     newObject.style.height = shapeDimY + "px";
     newObject.style.backgroundColor = shapeColor;
+    newObject.style.zIndex = biggestZIndex;
     newObject.addEventListener("click", selectObject);
     newObject.addEventListener("contextmenu", showCtxMenu);
     canvas.appendChild(newObject);
@@ -277,6 +290,14 @@ function duplicateObject(obj){
 }
 
 function selectObject(e){
+    if(tools.bringToFront.enabled){
+        bringToFront(e.target);
+        return;
+    }
+    if(tools.sendToBack.enabled){
+        sendToBack(e.target);
+        return;
+    }
     if(tools.rotate.enabled){
         rotateObject(e.target, argList.rotation);
         return;
@@ -424,6 +445,33 @@ function setRotation(e){
     argList.rotation = e.target.value;
 }
 
+function bringToFront(obj){
+    let zIndex = obj.style.zIndex;
+    if(zIndex == ''){
+        obj.style.zIndex = 1;
+    }
+    else{
+        obj.style.zIndex =  Number(zIndex) + 1;
+    }
+    biggestZIndex++;
+}
+
+function sendToBack(obj){
+    let zIndex = obj.style.zIndex;
+    if(zIndex == ''){
+        obj.style.zIndex = -1;
+    }
+    else{
+        obj.style.zIndex =  Number(zIndex) - 1;
+    }
+}
+
+function centerObject(){
+    let centerX = canvas.offsetWidth / 2 - selectedObject.offsetWidth / 2;
+    let centerY = canvas.offsetHeight / 2 - selectedObject.offsetHeight / 2;
+    deselectObject(centerX, centerY);
+}
+
 function ctxMenuClick(option){
     if(option == 0){
         toggleMove(true);
@@ -438,7 +486,16 @@ function ctxMenuClick(option){
     else if (option == 3){
         rotateObject(selectedObject, 90);
     }
-    else if(option == 6){
+    else if (option == 4){
+        bringToFront(selectedObject);
+    }
+    else if (option == 5){
+        sendToBack(selectedObject);
+    }
+    else if (option == 6){
+        centerObject();
+    }
+    else if(option == 7){
         selectedObject.remove();
         deselectObject(0, 0);
         hideCtxMenu();
