@@ -32,17 +32,23 @@ var moveClicked = false;
 var initX = 0;
 var initY = 0;
 var overControls = false;
-var shapeX = 20;
-var shapeY = 20;
+var shapeDimX = 20;
+var shapeDimY = 20;
 var dimensionsLocked = false;
+var curPosX;
+var curPosY;
+var mxPrev = 0;
+var myPrev = 0;
+var dx;
+var dy;
 var argList = {
     rotation : 45
 }
 
 //dimensions vars
 
-dimensionX.value = shapeX;
-dimensionY.value = shapeY;
+dimensionX.value = shapeDimX;
+dimensionY.value = shapeDimY;
 //dimesnions vars end
 
 var tools = {
@@ -83,18 +89,22 @@ for(let i = 0; i < shapeBtns.length; i++){
     shapeBtns[i].addEventListener("click", setShape);
 }
 
+function print(s){
+    console.log(s);
+}
+
 //dimensions
 
 dimensionX.addEventListener("change", () => {
-    shapeX = dimensionX.value;
+    shapeDimX = dimensionX.value;
     if(dimensionsLocked){
-        shapeY = shapeX;
+        shapeDimY = shapeDimX;
     }
     setPreview();
 })
 
 dimensionY.addEventListener("change", () => {
-    shapeY = dimensionY.value;
+    shapeDimY = dimensionY.value;
     setPreview();
 })
 
@@ -105,10 +115,10 @@ function lockDimensions() {
     dimensionsLocked = !dimensionsLocked;
     dimensionY.disabled = !dimensionY.disabled;
     if(dimensionsLocked){
-        shapeY = shapeX;
+        shapeDimY = shapeDimX;
         return;
     }
-    shapeY = dimensionY.value;
+    shapeDimY = dimensionY.value;
     setPreview();
 } 
 
@@ -172,6 +182,12 @@ for(var tool in tools){
 }
 toolBtns = document.querySelectorAll(".toolBtn");
 
+var curPosX;
+var curPosY;
+var mxPrev = 0;
+var myPrev = 0;
+var dx;
+var dy;
 
 onmousemove = (e) => {
     if(e.clientX < controls.offsetWidth){
@@ -181,9 +197,19 @@ onmousemove = (e) => {
         overControls = false;
     }
     if (moving) {
-        selectedObject.style.top = e.clientY + "px";
-        selectedObject.style.left = e.clientX + "px";
+        //movechange
+        // selectedObject.style.top = e.clientY + "px";
+        // selectedObject.style.left = e.clientX + "px";
+        dx = e.clientX - mxPrev;
+        dy = e.clientY - myPrev;
+        selectedObject.style.top = (curPosY + dy) + "px";
+        selectedObject.style.left = (curPosX + dx) + "px";
+        curPosY = curPosY + dy;
+        curPosX = curPosX + dx;
     }
+    mxPrev = e.clientX;
+    myPrev = e.clientY;
+    
 }
 
 onclick = (e) => {
@@ -194,7 +220,8 @@ onclick = (e) => {
                 deselectObject(initX, initY);
             }
             else{
-                deselectObject(e.clientX + "px", e.clientY + "px");
+                //movechange deselectObject(e.clientX + "px", e.clientY + "px");
+                deselectObject(curPosX, curPosY);
             }
             moveClicked = false;
         }
@@ -229,10 +256,10 @@ onkeydown = (e) => {
 function addObject(){
     let newObject = document.createElement("div");
     newObject.classList.add("object", shape);
-    newObject.style.top = "50%";
-    newObject.style.left = "50%";
-    newObject.style.width = shapeX + "px";
-    newObject.style.height = shapeY + "px";
+    newObject.style.top = `${canvas.offsetHeight / 2}px`;
+    newObject.style.left = `${canvas.offsetWidth / 2}px`;
+    newObject.style.width = shapeDimX + "px";
+    newObject.style.height = shapeDimY + "px";
     newObject.style.backgroundColor = shapeColor;
     newObject.addEventListener("click", selectObject);
     newObject.addEventListener("contextmenu", showCtxMenu);
@@ -267,8 +294,10 @@ function selectObject(e){
             deselectObject(initX, initY);
         }
         selectedObject = e.target;
-        initX = selectedObject.style.left;
-        initY = selectedObject.style.top;
+        initX = Number(selectedObject.style.left.match(/(\d+)/g)[0]);
+        initY = Number(selectedObject.style.top.match(/(\d+)/g)[0]);
+        print(selectedObject.style.left);
+        print(initX);
         selectedObject.classList.add("selected");
         if(tools.move.enabled && !moving){
             toggleMove(true);
@@ -286,8 +315,16 @@ function selectObject(e){
 
 function showCtxMenu(e){
     ctxMenu.style.display = "block";
-    ctxMenu.style.left = e.clientX + "px";
-    ctxMenu.style.top = e.clientY + "px";
+    let x = e.clientX;
+    let y = e.clientY;
+    if(canvas.offsetWidth - x < ctxMenu.offsetWidth){
+        x -= ctxMenu.offsetWidth;
+    }
+    if(canvas.offsetHeight - y < ctxMenu.offsetHeight){
+        y -= ctxMenu.offsetHeight;
+    }
+    ctxMenu.style.left = x + "px";
+    ctxMenu.style.top = y + "px";
     ctxShow = true;
 }
 
@@ -300,8 +337,8 @@ function hideCtxMenu(){
 
 function deselectObject(x, y){
     if(selectedObject){
-        selectedObject.style.left = x;
-        selectedObject.style.top = y;
+        selectedObject.style.left = x + "px";
+        selectedObject.style.top = y + "px";
         selectedObject.classList.remove("selected");
         selectedObject = null;
     }
@@ -363,7 +400,7 @@ function setPreview(){
     let previewShape = document.createElement('div');
     previewShape.classList.add(shape);
     previewShape.style.backgroundColor = shapeColor;
-    previewShape.style.width = Math.round(20 * (shapeX / shapeY)) + "px";
+    previewShape.style.width = Math.round(20 * (shapeDimX / shapeDimY)) + "px";
     preview.appendChild(previewShape);
 }
 
@@ -373,6 +410,8 @@ function toggleMove(b){
         selectedObject.classList.add("moving");
         canvas.classList.add("moving");
         selectedObject.classList.remove("selected");
+        curPosX = initX;
+        curPosY = initY;
         return;
     }
     moving = false;

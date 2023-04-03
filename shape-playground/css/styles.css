@@ -49,11 +49,16 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    z-index: 0;
+}
+
+#canvas.moving {
+    cursor: move;
 }
 
 #canvas.moving .object:hover {
     outline: none;
-    cursor: auto;
+    cursor: move;
 }
 
 #controls {
@@ -71,6 +76,7 @@ body {
     top: 0;
     left: 0;
     overflow-y: auto;
+    z-index: 10000;
 }
 
 #controls button{
