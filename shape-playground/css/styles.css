@@ -5,6 +5,20 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#loading-screen {
+    position: fixed;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #343a40;
+    z-index: 2000;
+}
+
+
 #ctxMenu {
     display: none;
     /* font-size: .45rem; */
@@ -90,6 +104,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .palette{
@@ -145,7 +160,7 @@ body {
 .object:hover {
     outline: 1px solid blue;
     cursor: pointer;
-    z-index: 1000;
+    /*z-index: 1000;*/
 }
 
 .square {
@@ -198,3 +213,28 @@ body {
     pointer-events: none;
 }
 
+.dimension-input-group {
+    padding: .2rem 0;
+}
+
+.dimension-input-group *{
+    display: inline;
+}
+
+.dimension-input-group input{
+    width: 30%;
+}
+
+.lock-dimensions-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 2rem;
+    padding: 2px 5px; 
+    display: inline-block;
+}
+
+.lock-dimensions-btn:hover, .lock-dimensions-btn.active {
+    background-color: rgba(0, 0, 0, .3);
+}

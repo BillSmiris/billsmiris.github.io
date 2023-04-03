@@ -9,23 +9,35 @@
     <title>Shape Playground - Vasilis Smyris</title>
 </head>
 <body>
+    <div id="loading-screen">
+        Loading...
+    </div>
     <div id="canvas"></div>
     <div id="controls">
         <button onclick="addObject()">+</button>
         <span class="label">Shape</span>
         <div id="shape-palette">
             <button class="shape-btn" data-shape="square">&#9632;</button>
-            <button class="shape-btn" data-shape="rectangle">&#9644;</button>
+            <!-- <button class="shape-btn" data-shape="rectangle">&#9644;</button> -->
             <button class="shape-btn" data-shape="circle">&#9679;</button>
         </div>
         <div id="preview"></div>
+        <span class="label">Dimensions</span>
+        <div class="dimension-input-group">
+            X: <input id="dimension-x" type="number"> px
+        </div>
+        <span class="lock-dimensions-btn"><i class="bi bi-link"></i></span>
+        <div class="dimension-input-group">
+            Y: <input id="dimension-y" type="number"> px
+        </div>
         <span class="label">Shape color</span>
         <div class="palette"></div>
         <span class="label">Background color</span>
         <div class="palette"></div>
         <span class="label">Tools</span>
         <div id="tools"></div>
-        
+        <span class="label">Tool Options</span>
+        <div id="tools-options"><b>No tool selected.</b></div>
     </div>
 
     <div id="ctxMenu">
@@ -33,7 +45,9 @@
         <div onclick="ctxMenuClick(1)">Duplicate</div>
         <div onclick="ctxMenuClick(2)">Rotate 45&deg;</div>
         <div onclick="ctxMenuClick(3)">Rotate 90&deg;</div>
-        <div onclick="ctxMenuClick(4)">Delete</div>
+        <div onclick="ctxMenuClick(4)">Bring To Front</div>
+        <div onclick="ctxMenuClick(5)">Send To Back</div>
+        <div onclick="ctxMenuClick(6)">Delete</div>
     </div>
 
     <script src="js/scripts.js">

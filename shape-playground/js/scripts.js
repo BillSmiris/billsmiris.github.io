@@ -1,10 +1,26 @@
+const loadingScreen = document.getElementById('loading-screen');
+
+document.onreadystatechange = function() {
+    if (document.readyState !== "complete") {
+        document.querySelector("body").style.visibility = "hidden";
+        loadingScreen.style.visibility = "visible";
+    } else {
+        loadingScreen.style.display = "none";
+        document.querySelector("body").style.visibility = "visible";
+    }
+};
+
 //reference UI elements
 const controls = document.getElementById("controls");
 const canvas = document.getElementById("canvas");
+const shapeBtns = document.querySelectorAll(".shape-btn");
 const preview = document.getElementById("preview");
-var palettes = document.querySelectorAll(".palette");
-var shapeBtns = document.querySelectorAll(".shape-btn");
-var toolsElement = document.getElementById("tools");
+const dimensionX = document.getElementById('dimension-x');
+const lockDimensionsBtn = document.querySelector('.lock-dimensions-btn');
+const dimensionY = document.getElementById('dimension-y');
+const palettes = document.querySelectorAll(".palette");
+const toolsElement = document.getElementById("tools");
+const toolOptions = document.getElementById("tools-options");
 const ctxMenu = document.getElementById("ctxMenu");
 var toolBtns = null;
 
@@ -16,26 +32,41 @@ var moveClicked = false;
 var initX = 0;
 var initY = 0;
 var overControls = false;
+var shapeX = 20;
+var shapeY = 20;
+var dimensionsLocked = false;
+var argList = {
+    rotation : 45
+}
+
+//dimensions vars
+
+dimensionX.value = shapeX;
+dimensionY.value = shapeY;
+//dimesnions vars end
 
 var tools = {
     "rotate" : {
         "icon" : `<i class="bi bi-arrow-clockwise"></i>`, 
-        "enabled" : false
+        "enabled" : false,
+        "options" : "<div class=\"dimension-input-group\">Rotation: <input type=\"number\" value=\"{{rotation}}\" onchange=\"(setRotation(event))\"> deg</div>"
     }, 
     "delete" : {
         "icon" : `<i class="bi bi-x-lg"></i>`, 
-        "enabled" : false
+        "enabled" : false,
+        "options" : ""
     }, 
     "paint" : {
         "icon" : `<i class="bi bi-paint-bucket"></i>`, 
-        "enabled" : false
+        "enabled" : false,
+        "options" : ""
     },
     "move" : {
         "icon" : `<i class="bi bi-arrows-move"></i>`,
-        "enabled" : false
+        "enabled" : false,
+        "options" : ""
     }
 };
-
 var shapeColorList = ["red", "green", "blue", "cyan", "magenta", "yellow", "lime", "orange", "purple", "black", "white",];
 var backgroundColorList = ["white", "darkgray", "black"];
 
@@ -51,6 +82,37 @@ setPreview();
 for(let i = 0; i < shapeBtns.length; i++){
     shapeBtns[i].addEventListener("click", setShape);
 }
+
+//dimensions
+
+dimensionX.addEventListener("change", () => {
+    shapeX = dimensionX.value;
+    if(dimensionsLocked){
+        shapeY = shapeX;
+    }
+    setPreview();
+})
+
+dimensionY.addEventListener("change", () => {
+    shapeY = dimensionY.value;
+    setPreview();
+})
+
+lockDimensionsBtn.addEventListener("click", lockDimensions);
+
+function lockDimensions() {
+    lockDimensionsBtn.classList.toggle('active');
+    dimensionsLocked = !dimensionsLocked;
+    dimensionY.disabled = !dimensionY.disabled;
+    if(dimensionsLocked){
+        shapeY = shapeX;
+        return;
+    }
+    shapeY = dimensionY.value;
+    setPreview();
+} 
+
+//dimensions end
 
 class Palette {
     constructor(paletteElement, colors, colorFunction, renderControls = false){
@@ -110,6 +172,7 @@ for(var tool in tools){
 }
 toolBtns = document.querySelectorAll(".toolBtn");
 
+
 onmousemove = (e) => {
     if(e.clientX < controls.offsetWidth){
         overControls = true;
@@ -168,6 +231,8 @@ function addObject(){
     newObject.classList.add("object", shape);
     newObject.style.top = "50%";
     newObject.style.left = "50%";
+    newObject.style.width = shapeX + "px";
+    newObject.style.height = shapeY + "px";
     newObject.style.backgroundColor = shapeColor;
     newObject.addEventListener("click", selectObject);
     newObject.addEventListener("contextmenu", showCtxMenu);
@@ -186,7 +251,7 @@ function duplicateObject(obj){
 
 function selectObject(e){
     if(tools.rotate.enabled){
-        rotateObject(e.target, 45);
+        rotateObject(e.target, argList.rotation);
         return;
     }
     if(tools.delete.enabled){
@@ -245,7 +310,7 @@ function deselectObject(x, y){
 function rotateObject(obj, deg){
     let rotate = obj.style.transform.match(/rotate\((\d+)([^)]+)\)/);
     if(rotate){
-        obj.style.transform = `rotate(${(Number(rotate[1]) + deg) % 360}deg)`;
+        obj.style.transform = `rotate(${(Number(rotate[1])) + deg % 360}deg)`;
         return;
     }
     obj.style.transform = `rotate(${deg}deg)`;
@@ -271,6 +336,7 @@ function toggleTool(e){
     if(tools[tool].enabled){
         tools[tool].enabled = false;
         e.target.style.backgroundColor = "#ddd";
+        toolOptions.innerHTML = "<b>No tool selected.</b>";
         return;
     }
     for(let i = 0; i < toolBtns.length; i++){
@@ -280,10 +346,25 @@ function toggleTool(e){
 
     e.target.style.backgroundColor = "lightgreen";
     tools[tool].enabled = true;
+    if(tools[tool].options == ""){
+        toolOptions.innerHTML = "<b>No options for this tool.</b>";
+        return;
+    }
+    let htmlToAdd = tools[tool].options;
+    let args = [...htmlToAdd.match(/(\{\{[a-zA-Z0-9-_]+\}\})/g)];
+    for(let i = 0; i < args.length; i++){
+        htmlToAdd = htmlToAdd.replaceAll(args[i], argList[args[i].match(/([a-zA-Z0-9-_]+)/g)[0]]);
+    }
+    toolOptions.innerHTML = htmlToAdd;
 }
 
 function setPreview(){
-    preview.innerHTML = `<div class="${shape}" style="background-color:${shapeColor}"></div>`;
+    preview.innerHTML = "";
+    let previewShape = document.createElement('div');
+    previewShape.classList.add(shape);
+    previewShape.style.backgroundColor = shapeColor;
+    previewShape.style.width = Math.round(20 * (shapeX / shapeY)) + "px";
+    preview.appendChild(previewShape);
 }
 
 function toggleMove(b){
@@ -300,6 +381,10 @@ function toggleMove(b){
     selectedObject.classList.add("selected");
 }
 
+function setRotation(e){
+    argList.rotation = e.target.value;
+}
+
 function ctxMenuClick(option){
     if(option == 0){
         toggleMove(true);
@@ -314,7 +399,7 @@ function ctxMenuClick(option){
     else if (option == 3){
         rotateObject(selectedObject, 90);
     }
-    else if(option == 4){
+    else if(option == 6){
         selectedObject.remove();
         deselectObject(0, 0);
         hideCtxMenu();
