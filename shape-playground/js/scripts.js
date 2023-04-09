@@ -19,6 +19,7 @@ const dimensionX = document.getElementById('dimension-x');
 const lockDimensionsBtn = document.querySelector('.lock-dimensions-btn');
 const dimensionY = document.getElementById('dimension-y');
 const palettes = document.querySelectorAll(".palette");
+const opacityRange = document.getElementById('opacity-range');
 const toolsElement = document.getElementById("tools");
 const toolOptions = document.getElementById("tools-options");
 const ctxMenu = document.getElementById("ctxMenu");
@@ -42,6 +43,7 @@ var myPrev = 0;
 var dx;
 var dy;
 var biggestZIndex = 0;
+var opacity = 1;
 var argList = {
     rotation : 45
 }
@@ -84,11 +86,12 @@ var tools = {
         "options" : ""
     }
 };
-var shapeColorList = ["red", "green", "blue", "cyan", "magenta", "yellow", "lime", "orange", "purple", "black", "white",];
-var backgroundColorList = ["white", "darkgray", "black"];
+var shapeColorList = ["#ff0000", "#00ff00", "#0000ff", "#00ffff", "#ff00ff", "#ffff00", "#008000", "#ffa500", "#800080", "#000000", "#ffffff",];
+var backgroundColorList = ["#ffffff", "#a9a9a9", "#000000"];
 
 var shape = "square";
-var shapeColor = shapeColorList[0];
+var shapeColor = hexToRGBA(shapeColorList[0]);
+var previewColor = shapeColorList[0];
 
 //initialization start
 canvas.style.backgroundColor = backgroundColorList[0];
@@ -194,6 +197,14 @@ for(var tool in tools){
 }
 toolBtns = document.querySelectorAll(".toolBtn");
 
+//opacity start
+opacityRange.addEventListener('input', (e) => {
+    opacity = e.target.value * 0.01;
+    shapeColor = hexToRGBA(previewColor);
+    setPreview();
+});
+//opacity end
+
 var curPosX;
 var curPosY;
 var mxPrev = 0;
@@ -268,8 +279,8 @@ onkeydown = (e) => {
 function addObject(){
     let newObject = document.createElement("div");
     newObject.classList.add("object", shape);
-    newObject.style.top = `${canvas.offsetHeight / 2}px`;
-    newObject.style.left = `${canvas.offsetWidth / 2}px`;
+    newObject.style.top = `${canvas.offsetHeight / 2 - shapeDimY / 2}px`;
+    newObject.style.left = `${canvas.offsetWidth / 2 - shapeDimX / 2}px`;
     newObject.style.width = shapeDimX + "px";
     newObject.style.height = shapeDimY + "px";
     newObject.style.backgroundColor = shapeColor;
@@ -380,8 +391,20 @@ function setShape(e){
 }
 
 function setShapeColor(c){
-    shapeColor = c;
+    //opacity changes
+    previewColor = c
+    shapeColor = hexToRGBA(c);
     setPreview();
+}
+
+function hexToRGBA(c){
+    let result = "rgba(";
+    for(let i = 1; i < c.length; i += 2){
+        result += parseInt(`${c[i]}${c[i + 1]}}`, 16) + ",";
+    }
+    result += `${opacity})`; 
+    console.log()
+    return result;
 }
 
 function setBackgroundColor(c){
@@ -420,8 +443,9 @@ function setPreview(){
     preview.innerHTML = "";
     let previewShape = document.createElement('div');
     previewShape.classList.add(shape);
-    previewShape.style.backgroundColor = shapeColor;
+    previewShape.style.backgroundColor = previewColor;
     previewShape.style.width = Math.round(20 * (shapeDimX / shapeDimY)) + "px";
+    previewShape.style.opacity = opacity;
     preview.appendChild(previewShape);
 }
 
