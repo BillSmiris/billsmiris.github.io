@@ -18,10 +18,6 @@ var langs = [
         'dropDownHTML':'English(US)'
     },
     {
-        'code':'enUK',
-        'dropDownHTML':'English(UK)'
-    },
-    {
         'code':'el',
         'dropDownHTML':'Ελληνικά'
     }
