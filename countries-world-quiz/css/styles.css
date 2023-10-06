@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#answer-form{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#quiz-area{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100vw;
+}
+
+#quiz-controls{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 80%;
+    justify-content: space-between;
+}
+
+#country{
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 20vw;
+}
+
+#input-message{
+    width: 20em;
+}
+
+#counters{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+#map{
+    width: 80%;
+    height: 80vh;
+    background-color: lightblue;
+    border-radius: 1rem;
+}
+
+#answers-header {
+    margin-top: 2rem;
+}
+
+#answer-table{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+}
+
+#answer-table > div {
+    width: 14.28%;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    min-height: 2rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#answer-table > div.right {
+    border-right: 1px solid black;
+}
+
+#answer-table > div.bottom {
+    border-bottom: 1px solid black;
+}
