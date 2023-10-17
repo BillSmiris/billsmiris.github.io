@@ -1,3 +1,13 @@
+:root{
+    --dark-theme-text: #EBEBEB;
+    --dark-theme-accent: #00001a;
+    --dark-theme-accent-op-60: rgba(0, 0, 26, .6);
+    --dark-theme-accent-op-90: rgba(0, 0, 26, .9);
+    --dark-theme-foreground: rgb(33, 37, 41);
+    --dark-theme-foreground-op-90: rgb(33, 37, 41, .9);
+    --dark-theme-background: #1a1e21;
+}
+
 #loading-screen {
     position: fixed;
     top:0;
@@ -25,6 +35,11 @@
     height: 1.5rem;
     float: left;
     pointer-events: none;
+}
+
+#dark-theme-btn {
+    margin-right: .5rem;
+    border-radius: 50%;
 }
 
 /* --- section classes start --- */
@@ -114,7 +129,7 @@ a.frame-section {
 
 /* --- about section classes start --- */
 #about {
-    background-image: url("../media/images/backgrounds/about.jpg");
+    background-image: url("../media/images/backgrounds/light/about.jpg");
 }
 
 .about-tabs {
@@ -214,7 +229,7 @@ a.frame-section {
 
 /* --- work section classes start --- */
 #work {
-    background-image: url("../media/images/backgrounds/work.jpg");
+    background-image: url("../media/images/backgrounds/light/work.jpg");
     
 }
 
@@ -377,3 +392,86 @@ a.footer-icon-link {
 }
 
 /*new edu test*/
+
+ /*dark-theme-classes-start*/
+
+.dark-theme {
+    color: var(--dark-theme-text);
+}
+
+.dark-theme #about {
+    background-image: url("../media/images/backgrounds/dark/about.jpg");
+}
+
+.dark-theme #work {
+    background-image: url("../media/images/backgrounds/dark/work.jpg"); 
+}
+
+.dark-theme #hero {
+    background-color: var(--dark-theme-accent);
+}
+
+.dark-theme .about-tabs .nav-link{
+    background-color: var(--dark-theme-accent-op-60);
+    border: none;
+    color: #ccc;
+}
+
+.dark-theme .about-tabs .nav-link:hover{
+    color: white;
+}
+
+.dark-theme .about-tabs .nav-link.active, .dark-theme .about-scrollable-div {
+    background-color: var(--dark-theme-accent-op-90);
+}
+
+.about-scrollable-div a {
+    color: var(--dark-theme-text);
+}
+
+.dark-theme .info-section-gray {
+    background-color: var(--dark-theme-background);
+}
+
+.dark-theme a.section-control-dark {
+    color: lightgray;
+}
+
+.dark-theme .edu-element {
+    background-color: var(--dark-theme-foreground);
+}
+
+.dark-theme .logo-col {
+    border-right: 1px solid var(--dark-theme-text);
+}
+
+
+.dark-theme .work-scrollable-div { 
+    background-color: var(--dark-theme-foreground-op-90);
+}
+
+.dark-theme .card {
+    background-color: var(--dark-theme-foreground);
+}
+
+.dark-theme .card .btn {
+    background-color: var(--dark-theme-background);
+}
+
+.dark-theme .modal-content {
+    background-color: var(--dark-theme-foreground);
+}
+
+.dark-theme .modal-header {
+    border-bottom: 1px solid #555;
+}
+
+.dark-theme .modal-header .btn-close {
+    filter:invert(1) grayscale(100%) brightness(200%);
+}
+
+.dark-theme .modal-footer {
+    border-top: 1px solid #555;
+}
+
+ /*dark-theme-classes-end*/

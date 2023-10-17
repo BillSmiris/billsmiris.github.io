@@ -14,14 +14,35 @@ var projects = null;
 
 var langs = [
     {
-        'code':'enUS',
-        'dropDownHTML':'English(US)'
+        'code':'en',
+        'dropDownHTML':'English'
     },
     {
         'code':'el',
         'dropDownHTML':'Ελληνικά'
     }
 ]
+
+var darkTheme = false;
+var darkThemeBtn = document.querySelector('#dark-theme-btn')
+darkThemeBtn.addEventListener('click', toggleDarkTheme);
+
+function toggleDarkTheme(){
+    let elements = document.getElementsByClassName("dark-theme-component");
+    darkTheme = !darkTheme;
+    if(darkTheme){
+        darkThemeBtn.innerHTML = `<i class="bi bi-sun"></i>`;
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.add("dark-theme");
+        }
+    }
+    else{
+        darkThemeBtn.innerHTML = `<i class="bi bi-moon"></i>`;
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.remove("dark-theme");
+        }
+    }
+}
 
 //build education section start
 

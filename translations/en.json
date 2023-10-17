@@ -18,7 +18,13 @@
     "eduList":[
         {
             "orgLink":"https://www.unipi.gr/unipi/en/home-cs.html",
-            "logo":"unipi.jpg",
+            "logo":"unipi.png",
+            "logoAlt":"UNIPI LOGO",
+            "html":"<h2>University of Piraeus</h2><h4>Department of Informatics</h4>MSc in \"Advanced Informatics and Computing Systems - Software Development and Αrtificial Intelligence\""
+        },
+        {
+            "orgLink":"https://www.unipi.gr/unipi/en/home-cs.html",
+            "logo":"unipi.png",
             "logoAlt":"UNIPI LOGO",
             "html":"<h2>University of Piraeus</h2><h4>Department of Informatics</h4><h5>BSc in Computer Science</h5>Grade: 8.20/10"
         },

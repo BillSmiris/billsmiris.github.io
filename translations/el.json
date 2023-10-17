@@ -18,7 +18,13 @@
     "eduList":[
         {
             "orgLink":"https://www.unipi.gr/unipi/en/home-cs.html",
-            "logo":"unipi.jpg",
+            "logo":"unipi.png",
+            "logoAlt":"UNIPI LOGO",
+            "html":"<h2>Πανεπιστήμιο Πειραιώς</h2><h4>Τμήμα Πληροφορικής</h4>MSc σε \"Προηγμένα Συστήματα Πληροφορικής - Ανάπτυξη Λογισμικού και Τεχνητής Νοημοσύνης\""
+        },
+        {
+            "orgLink":"https://www.unipi.gr/unipi/en/home-cs.html",
+            "logo":"unipi.png",
             "logoAlt":"UNIPI LOGO",
             "html":"<h2>Πανεπιστήμιο Πειραιώς</h2><h4>Τμήμα Πληροφορικής</h4><h5>BSc στην Επιστήμη Υπολογιστών</h5>Βαθμός: 8.20/10"
         },

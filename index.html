@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Vasilis Smyris</title>
 </head>
-<body>
+<body class="dark-theme-component">
     <div id="loading-screen">
         Loading...
     </div>
@@ -49,12 +49,17 @@
                         <a class="nav-link translatable" href="#projects" data-translationTag="projects">Projects</a>
                     </li>
                 </ul>
-                <div class="dropdown">
-                    <button class="btn btn-dark dropdown-toggle" type="button" id="langDropDownBtn" data-bs-toggle="dropdown" aria-expanded="false">
-                      
+                <div class="d-flex">
+                    <button class="btn btn-dark" type="button" id="dark-theme-btn">
+                        <i class="bi bi-moon"></i>
                     </button>
-                    <ul id="lang-list" class="dropdown-menu" aria-labelledby="langDropDownBtn">
-                    </ul>
+                    <div class="dropdown">
+                        <button class="btn btn-dark dropdown-toggle" type="button" id="langDropDownBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                          
+                        </button>
+                        <ul id="lang-list" class="dropdown-menu" aria-labelledby="langDropDownBtn">
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
