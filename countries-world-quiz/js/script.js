@@ -1235,9 +1235,19 @@ let foundArray = [];
 
 let numberOfFound = 0;
 
+const INIT_TIME = 1500000;
+
+let currentTime = 0;
+
+let timer = undefined;
+
+const timerSpan = document.querySelector("#timer-span");
+timerSpan.innerHTML = formatTime(INIT_TIME);
+
 const targetScore = document.querySelector("#target-score");
 const currentScore = document.querySelector("#current-score");
 targetScore.innerHTML = countries.length;
+currentScore.innerHTML = '0';
 //initialize quiz data end
 
 let inputMessage = document.querySelector("#input-message");
@@ -1284,9 +1294,15 @@ document.querySelector('#answer-form')?.addEventListener('submit', e => {
     }
 });
 
-document.querySelector('#country')?.addEventListener('input', e => {
+const countryInput = document.querySelector('#country');
+countryInput.addEventListener('input', e => {
     inputMessage.innerHTML = "";
 });
+
+const playBtn = document.querySelector('#play-btn');
+const stopBtn = document.querySelector('#stop-btn');
+playBtn.addEventListener('click', startGame);
+stopBtn.addEventListener('click', endGame);
 //set event listeners end
 
 function checkAnswer(answer){
@@ -1320,7 +1336,6 @@ function checkAnswer(answer){
 }
 
 function markCountryOnMap(countryCode, color){
-    console.log(countryCode);
     let paths = document.querySelectorAll(`path[name="${countryCode}"]`);
     for(let i = 0; i < paths.length; i++){
         paths[i].style.fill = color;
@@ -1328,7 +1343,7 @@ function markCountryOnMap(countryCode, color){
 }
 
 function showCountryOnTable(index, color){
-    let cell = document.querySelector(`#${countries[index].code}`);
+    let cell = document.querySelector(`div#${countries[index].code}`);
     cell.innerHTML = `<span style="color:${color};">${countries[index].aliases[0]}</span>`;
 }
 
@@ -1337,6 +1352,8 @@ function setInputMessage(text, color){
 }
 
 function startGame(){
+    playBtn.classList.add("hidden");
+    stopBtn.classList.remove("hidden");
     foundArray = Array(countries.length).fill(false);
     numberOfFound = 0;
     currentScore.innerHTML = 0;
@@ -1344,16 +1361,49 @@ function startGame(){
     for(let i = 0; i < paths.length; i++){
         paths[i].style.fill = "#ececec";
     }
-    document.querySelector('path[name="PS"').style.fill = "#666";
-    document.querySelector('path[name="EH"').style.fill = "#666";
+    document.querySelector('path[name="PS"]').style.fill = "#666";
+    document.querySelector('path[name="EH"]').style.fill = "#666";
     let cells = document.querySelectorAll("#answer-table div");
     for(let i = 0; i < cells.length; i++){
         cells[i].innerHTML = "";
     }
+    countryInput.disabled = false;
+    currentTime = INIT_TIME;
+    timerSpan.innerHTML = formatTime(INIT_TIME);
+    timer = setInterval(timerFunction, 1000);
 }
 
 function endGame(){
-
+    clearInterval(timer);
+    stopBtn.classList.add("hidden");
+    playBtn.classList.remove("hidden");
+    countryInput.disabled = true;
+    countryInput.value = "";
+    for(let i = 0; i < countries.length; i++){
+        let code = countries[i].code;
+        if(document.querySelector(`div#${code}`).innerHTML === ''){
+            markCountryOnMap(code, 'red');
+            showCountryOnTable(i, 'red');
+        }
+    }
+    inputMessage.innerHTML="";
 }
 
-startGame();
+function formatTime(time){
+    let seconds = 0;
+    let minutes = 0;
+
+    minutes = Math.floor(time / 60000);
+    time = time - minutes * 60000;
+    seconds = Math.floor(time / 1000);
+
+    return `${minutes > 10 ? "" + minutes : "0" + minutes}:${seconds > 10 ? "" + seconds : "0" + seconds}`;
+}
+
+function timerFunction(){
+    currentTime -= 1000;
+    timerSpan.innerHTML = formatTime(currentTime);
+    if(currentTime == 0){
+        endGame();
+    }
+}

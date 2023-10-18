@@ -21,7 +21,6 @@
                 <p class="lead mb-4 translatable" data-translationTag="heroText">My name is Vasilis Smyris. I am a full-stack software developer from Greece, with a passion for efficient, scalable and user-friendly software.</p>
                 <a class="btn btn-dark translatable" data-translationTag="requestCV" href="mailto:billyssmiris@gmail.com?subject=Request for CV&body=Dear Vasili,%0D%0A%0D%0AI am interested in learning more about your qualifications and experience, and would greatly appreciate it if you could send me a copy of your CV.%0D%0A%0D%0AThank you for your time and consideration.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]" role="button">Request CV</a>
                 <a class="btn btn-dark translatable" href="#contact" role="button" data-translationTag="contactMe">Contact me</a>
-                <a class="btn btn-dark" href="shape-playground/" role="button">Shape Playground</a>
             </div>
         </div>
     </header>
@@ -47,6 +46,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link translatable" href="#projects" data-translationTag="projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#apps" data-translationTag="projects">Apps</a>
                     </li>
                 </ul>
                 <div class="d-flex">
@@ -128,7 +130,26 @@
                         </button>
                     </div>
                 </div>
+                <a class="section-control next-section-arrow section-control section-control-dark" href="#apps"><i class="bi bi-arrow-down-short"></i></a>
                 <a class="section-control frame-section section-control-dark" href="#projects"><i class="bi bi-app"></i></a>
+            </div>
+        </section>
+        <section class="info-section" id="apps">
+            <div class="container">
+                <h1>Apps</h1>
+                <div class="scrollable-div app-scrollable-div">
+                    <div class="scrollable-div-content app-scrollable-div-content">
+                        <div class="app-tile">
+                            <div id="shape-playground-icon" class="app-icon" data-app="/shape-playground/"></div>
+                            <div class="app-title">Shape Playground</div>
+                        </div>
+                        <div class="app-tile">
+                            <div id="world-countries-quiz" class="app-icon" data-app="/countries-world-quiz/"></div>
+                            <div class="app-title">World Countries Quiz</div>
+                        </div>
+                    </div>
+                </div>
+                <a class="section-control frame-section section-control-light" href="#apps"><i class="bi bi-app"></i></a>
             </div>
         </section>
     </main>

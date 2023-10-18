@@ -205,6 +205,15 @@ function openProjectModal(i){
 }
 //handle project modal content end
 
+//set app event listeners start
+const appIcons = document.querySelectorAll(".app-icon");
+for(let i = 0; i < appIcons.length; i++){
+    appIcons[i].addEventListener('click', (e) => {
+        window.open(e.target.dataset.app, '_blank');
+    })
+}
+//set app event listeners end
+
 //build lang list start
 const langDropDownBtn = document.getElementById('langDropDownBtn');
 

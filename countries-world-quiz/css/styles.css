@@ -82,3 +82,14 @@
 #answer-table > div.bottom {
     border-bottom: 1px solid black;
 }
+
+.control-btn {
+    display: flex;
+    gap: .2rem;
+    padding: .2rem;
+    font-size: 1rem;
+}
+
+.hidden {
+    display: none;
+}

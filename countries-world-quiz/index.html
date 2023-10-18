@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Vasilis Smiris - Countries of the World Quiz</title>
+    <title>Countries of the World Quiz - Vasilis Smiris</title>
 </head>
 <body>
     <div id="quiz-area">
         <div id="quiz-controls">
             <form id="answer-form">
                 <label for="country">Enter country:</label>
-                <input id="country" type="text" name="country">
+                <input id="country" type="text" name="country" disabled>
                 <div id="input-message"></div>
             </form>
             <div id="counters">
+                <button id="play-btn" role="button" class="control-btn"><span class="bi bi-play-fill"></span> Start</button>
+                <button id="stop-btn" role="button" class="control-btn hidden"><span class="bi bi-stop-fill"></span> Stop</button>
                 <h2>
                     Score: <span id="current-score"></span>/<span id="target-score"></span>
                 </h2>
-                <h2>Time: 00:00</h2>
+                <h2>Time: <span id="timer-span">00:00</span></h2>
             </div>
         </div>
         <svg id="map" baseprofile="tiny" fill="#ececec" height="857" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width=".2" version="1.2" viewbox="0 0 2000 857" width="2000" xmlns="http://www.w3.org/2000/svg">

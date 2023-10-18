@@ -4,6 +4,7 @@
     --dark-theme-accent-op-60: rgba(0, 0, 26, .6);
     --dark-theme-accent-op-90: rgba(0, 0, 26, .9);
     --dark-theme-foreground: rgb(33, 37, 41);
+    --dark-theme-foreground-op-40: rgb(33, 37, 41, .4);
     --dark-theme-foreground-op-90: rgb(33, 37, 41, .9);
     --dark-theme-background: #1a1e21;
 }
@@ -346,6 +347,84 @@ a.frame-section {
 
 /* --- projects section classes end --- */
 
+/* --- apps section classes start --- */
+
+#apps {
+    background-image: url("../media/images/backgrounds/light/apps.jpg");
+}
+
+.app-scrollable-div { 
+    background-color: rgb(255, 255, 255, .2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.app-scrollable-div-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 2rem;
+    padding-top: 1rem;
+}
+
+.app-tile{
+    width: 12%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    
+}
+
+.app-icon{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+}
+
+.app-icon:after {
+    content:'\A';
+    position:absolute;
+    width:5rem; 
+    height:5rem;
+    border-radius: 1rem;
+    background: linear-gradient(330deg, rgba(62,62,62,0.5) 0%, rgba(255,255,255,0.5) 60%);
+    opacity:0;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+
+.app-icon:hover:after {
+    opacity:1;
+}
+
+.app-icon:hover {
+    cursor: pointer;
+}
+
+.app-title{
+    text-align: center;
+    font-size: 1rem;
+}
+
+#shape-playground-icon {
+    background-image: url("../media/images/apps/shape-playground.png");
+}
+
+#shape-playground-icon:hover {
+    background-image: url("../media/images/apps/shape-playground.png");
+}
+
+#world-countries-quiz{
+    background-image: url("../media/images/apps/world-countries-quiz.png");
+}
+
+/* --- apps section classes end --- */
+
 
 /* --- footer classes start --- */
 footer .container{
@@ -407,6 +486,10 @@ a.footer-icon-link {
     background-image: url("../media/images/backgrounds/dark/work.jpg"); 
 }
 
+.dark-theme #apps {
+    background-image: url("../media/images/backgrounds/dark/apps.jpg"); 
+}
+
 .dark-theme #hero {
     background-color: var(--dark-theme-accent);
 }
@@ -425,7 +508,7 @@ a.footer-icon-link {
     background-color: var(--dark-theme-accent-op-90);
 }
 
-.about-scrollable-div a {
+.dark-theme .about-scrollable-div a {
     color: var(--dark-theme-text);
 }
 
@@ -445,6 +528,9 @@ a.footer-icon-link {
     border-right: 1px solid var(--dark-theme-text);
 }
 
+.dark-theme .app-scrollable-div { 
+    background-color: var(--dark-theme-foreground-op-40);
+}
 
 .dark-theme .work-scrollable-div { 
     background-color: var(--dark-theme-foreground-op-90);
@@ -472,6 +558,14 @@ a.footer-icon-link {
 
 .dark-theme .modal-footer {
     border-top: 1px solid #555;
+}
+
+.dark-theme .carousel-control-prev-icon {
+    filter: invert(0) grayscale(100);
+}
+
+.dark-theme .carousel-control-next-icon {
+    filter: invert(0) grayscale(100);
 }
 
  /*dark-theme-classes-end*/
