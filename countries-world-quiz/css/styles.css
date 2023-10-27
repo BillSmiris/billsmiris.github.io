@@ -56,6 +56,7 @@
 
 #answers-header {
     margin-top: 2rem;
+    pointer-events: none;
 }
 
 #answer-table{
@@ -90,6 +91,22 @@
     font-size: 1rem;
 }
 
+#tooltip {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    height: 1.3rem;
+    font-size: .9rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .4rem;
+    pointer-events: none;
+}
+
 .hidden {
-    display: none;
+    display: none !important;
 }

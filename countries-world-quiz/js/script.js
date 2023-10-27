@@ -1248,6 +1248,35 @@ const targetScore = document.querySelector("#target-score");
 const currentScore = document.querySelector("#current-score");
 targetScore.innerHTML = countries.length;
 currentScore.innerHTML = '0';
+
+const foundColor = 'green';
+const notFoundColor = 'red';
+const warningColor = 'red';
+
+document.querySelector('path[name="PS"]').style.fill = "#666";
+document.querySelector('path[name="EH"]').style.fill = "#666";
+
+const map = document.querySelector("#map");
+const paths = document.querySelectorAll("#map path, #map circle");
+const tooltip = document.querySelector("#tooltip");
+
+for(let i = 0; i < paths.length; i++){
+    let path = paths[i];
+    path.addEventListener('click', e => {
+        if(path.style.fill === foundColor || path.style.fill === notFoundColor){
+            let country = countries.filter(obj => {
+                return obj.code === paths[i].getAttribute("name");
+            })[0]?.aliases[0];
+            console.log(e);
+            if(country){
+                tooltip.innerHTML = country;
+                tooltip.style.top = e.clientY + 'px';
+                tooltip.style.left = e.clientX + 'px';
+                tooltip.classList.remove("hidden");
+            }
+        }
+    });
+}
 //initialize quiz data end
 
 let inputMessage = document.querySelector("#input-message");
@@ -1314,7 +1343,7 @@ function checkAnswer(answer){
         for(let j = 0; j < countries[i].aliases.length; j++){ //for each alias of the country
             if(answer === countries[i].aliases[j].toLowerCase()){ //if answer matches
                 if(foundArray[i]){ //if already found end search
-                    setInputMessage("Country already found!", "red");
+                    setInputMessage("Country already found!", warningColor);
                     return false;
                 }
                 foundArray[i] = true; //if not found mark as found and paint map and continue to find other with same alias
@@ -1322,8 +1351,8 @@ function checkAnswer(answer){
                 found = true;
                 numberOfFound++;
                 currentScore.innerHTML = numberOfFound;
-                markCountryOnMap(countries[i].code, "green");
-                showCountryOnTable(i, 'green');
+                markCountryOnMap(countries[i].code, foundColor);
+                showCountryOnTable(i, foundColor);
                 break;
             }
         }
@@ -1332,11 +1361,11 @@ function checkAnswer(answer){
     if(found){
         return foundArray[lastFoundIndex];
     }
-    setInputMessage("Invalid country!", "red");
+    setInputMessage("Invalid country!", warningColor);
 }
 
 function markCountryOnMap(countryCode, color){
-    let paths = document.querySelectorAll(`path[name="${countryCode}"]`);
+    let paths = document.querySelectorAll(`path[name="${countryCode}"], circle[name="${countryCode}"]`);
     for(let i = 0; i < paths.length; i++){
         paths[i].style.fill = color;
     }
@@ -1357,7 +1386,6 @@ function startGame(){
     foundArray = Array(countries.length).fill(false);
     numberOfFound = 0;
     currentScore.innerHTML = 0;
-    const paths = document.querySelectorAll("#map path");
     for(let i = 0; i < paths.length; i++){
         paths[i].style.fill = "#ececec";
     }
@@ -1382,8 +1410,8 @@ function endGame(){
     for(let i = 0; i < countries.length; i++){
         let code = countries[i].code;
         if(document.querySelector(`div#${code}`).innerHTML === ''){
-            markCountryOnMap(code, 'red');
-            showCountryOnTable(i, 'red');
+            markCountryOnMap(code, notFoundColor);
+            showCountryOnTable(i, notFoundColor);
         }
     }
     inputMessage.innerHTML="";
