@@ -51,6 +51,7 @@
                 "Ανάπτυξη αλλαγών/αναβαθμίσεων για συσκευές και δίκτυα ATM.",
                 "Σχεδίαση και ανάπτυξη web portals για τη διαχείριση δικτύων ATM.",
                 "Ανάπτυξη λογισμικού βάσει αιτημάτων και απαιτήσεων πελάτη.",
+                "Συμμετοχή στο intergration των προϊόντων του προμηθευτή με τα συστήματα του πελάτη.",
                 "Διευκόλυνση της επικοινωνίας μεταξύ πελάτη και προμηθευτή.",
                 "Παροχή ποιοτικού customer service και σημαντική συμβολή στην ικανοποίηση του πελάτης προς τα προϊόντα και τις υπηρεσίες της εταιρείας."
             ]
@@ -129,7 +130,7 @@
             "id":"edu1821",
             "title": "Εκπαιδευτική Εφαρμογή",
             "summary": "Εκπαιδευτική εφαρμογή, ανεπτυγμένη για πανεπιστημιακή εργασία. Μέσω της εφαρμογής, οι χρήστες μπορούν να μάθουν για τα πρόσωπα της Ελληνικής Επανάστασης και να αξιολογήσουν τη γνώση τους μέσω τεστ. Η εφαρμογή είναι διαθέσιμη σε εκδόσεις desktop και web.",
-            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/Educational-Application\">https://github.com/BillSmiris/Educational-Application</a>",
+            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/Educational-Application\">https://github.com/BillSmiris/Educational-Application</a></br><a href=\"https://drive.google.com/file/d/1WX2GmOwCyjYZDb25NqytJ74Ja-o7oZIi/view?usp=drive_link\" target=\"_blank\" class=\"fw-bold\">Web app demo video</a></br><a href=\"https://drive.google.com/file/d/1mBzGLmV3gFxuqUUw01D4lj2VlFS2Q5QY/view?usp=drive_link\" target=\"_blank\" class=\"fw-bold\">Desktop app demo video</a>",
             "technologies": "WPF, ASP.NET, C#, HTML5, CSS3, JS, PostgreSQL",
             "points": [
                 "Εκπαιδευτική εφαρμογή, ανεπτυγμένη για πανεπιστημιακή εργασία.",

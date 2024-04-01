@@ -50,6 +50,7 @@
                 "Provided technical support for ATM solutions on a day-to-day basis.",
                 "Developed changes/upgrades for ATM devices and networks, based on customer requests and specifications.",
                 "Designed and developed web portals for managing ATM networks.",
+                "Took part in the integration of vendor products with customer systems.",
                 "Facilitated communication between customer and vendor.",
                 "Provided quality customer service and contributed in maximizing customer satisfaction in company's services and products."
             ]
@@ -99,7 +100,7 @@
             "id":"parking",
             "title": "ParKing",
             "summary": "Parking Android app. The app enables users to easily view nearby parking facilities and relevant information, allowing them to quickly compare the options and find the one that best suits them.",
-            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/ParKing\">https://github.com/BillSmiris/ParKing</a>",
+            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/ParKing\">https://github.com/BillSmiris/ParKing</a></br><a href=\"https://drive.google.com/file/d/1QcLIcdSZaY7fEGl6LBtVU52dZgJb4Qqw/view?usp=sharing\" target=\"_blank\" class=\"fw-bold\">Web app demo video</a>",
             "technologies": "Android Studio, Java, Google Firebase",
             "points": [
                 "Parking Android application made for a university project.",
@@ -128,7 +129,7 @@
             "id":"edu1821",
             "title": "Educational App",
             "summary": "Educational application made for a university project.Through the application, users can learn about the faces of the Greek War of Independence and evaluate their knowledge via tests. Desktop and web version available.",
-            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/Educational-Application\">https://github.com/BillSmiris/Educational-Application</a>",
+            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/Educational-Application\">https://github.com/BillSmiris/Educational-Application</a></br><a href=\"https://drive.google.com/file/d/1WX2GmOwCyjYZDb25NqytJ74Ja-o7oZIi/view?usp=drive_link\" target=\"_blank\" class=\"fw-bold\">Web app demo video</a></br><a href=\"https://drive.google.com/file/d/1mBzGLmV3gFxuqUUw01D4lj2VlFS2Q5QY/view?usp=drive_link\" target=\"_blank\" class=\"fw-bold\">Desktop app demo video</a>",
             "technologies": "WPF, ASP.NET, C#, HTML5, CSS3, JS, PostgreSQL",
             "points": [
                 "Educational application made for a university project.",
