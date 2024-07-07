@@ -10,29 +10,29 @@
     "projects":"Projects",
     "summary":"Summary",
     "skills":"Skills",
-    "aboutSummaryText":"&nbsp;&nbsp;&nbsp;&nbsp;Hi, I am Vasilis Smyris, a full-stack software developer based in Athens, Greece. I hold a BSc in Computer Science from the University of Piraeus and have recently embarked on my career in software development. Over the years, I have gained extensive experience in various programming languages, software development frameworks, and other technologies, both through my academic studies and personal projects. I possess a solid theoretical understanding of the principles of programming and a deep appreciation for the design of efficient, scalable and user-friendly software and the authoring of clean, reusable and maintainable code. My skillset includes front-end and back-end development, as well as a keen understanding of the infrastructure, in software and hardware, required to deploy complex applications. I specialize in the .NET Framework and the C# programming language, with a portfolio of desktop and web applications built using the plethora of the framework's project types. In addition, I have extensive experience with Python, which I use primarily for prototyping and exploring complex scientific topics. Recently, I have been expanding my horizons by delving into low-level problem-solving with C++, game development, and electronics.<br/> &nbsp;&nbsp;&nbsp;&nbsp;The most definitive culmination of the knowledge and skills I have gathered through the years, has been my university thesis, which touches upon smart home applications. The application developed for this project consists of a web server that works as the smart-home hub, which serves the users with a UI through web browser and facilitates the communication between them and the various smart devices in the network, developed using Blazor Webassembly, and a prototype smart RGB lamp device, built using a Raspberry Pi computer, Python and basic electronics knowledge. The highlight of the project is the creation of a protocol of communication between the devices and the server, which can facilitate the administration and control of the devices and the creation of UI pages for these purposes, independent of device type.<br/> &nbsp;&nbsp;&nbsp;&nbsp;I currently work as an IT Implementation Consultant at NCR Atleos, providing technical support for ATM solutions on a day-to-day basis and developing software for ATM machines and networks, while I am also studying for my Master's Degree in Software Development. When I'm not working or studying, I enjoy learning about history and geography, editing photos and videos, working out, learning new languages, collecting and traveling. I'm always eager to collaborate on new projects, so please don't hesitate to <a href=\"#contact\">get in touch</a>.",
+    "aboutSummaryText":"&nbsp;&nbsp;&nbsp;&nbsp;Hi, I am Vasilis Smyris, a full-stack software developer based in Athens, Greece. I hold a BSc in Computer Science from the University of Piraeus and have recently embarked on my career in software development. I currently work as an IT Implementation Consultant at NCR Atleos, developing software for ATM machines and networks and providing technical support for ATM solutions on a day-to-day basis. I am also pursuing a Master's Degree in Software Development at the University of Piraeus.<br/>&nbsp;&nbsp;&nbsp;&nbsp;Throughout my academic journey, professional work and personal projects, I have gained extensive experience in various programming languages, software development frameworks and other technologies. I have a solid theoretical foundation in programming principles and a deep passion for designing efficient, scalable, and user-friendly software and writing clean, reusable, and maintainable code. My skillset includes front-end and back-end design and development, as well as a keen understanding of the infrastructure, in software and hardware, required to deploy complex applications. I currently specialize in developing full-stack web applications, using Angular for the front-end and Spring for the back-end and being able to integrate my applications with outside systems. In addition, I have good experience with the .NET Framework and its various web and desktop application development libraries, as well as with the Python language, having used it for various scientific university projects and for developing web applications with the Django framework.<br/>&nbsp;&nbsp;&nbsp;&nbsp; The most definitive culmination of the knowledge and skills I have gathered through the years, has been my university thesis, which touches upon smart home applications. The application developed for this project consists of a web server that works as the smart-home hub, which serves the users with a UI through web browser and facilitates the communication between them and the various smart devices in the network, developed using Blazor Webassembly, and a prototype smart RGB lamp device, built using a Raspberry Pi computer, Python and basic electronics knowledge. The highlight of the project is the creation of a protocol of communication between the devices and the server, which can facilitate the administration and control of the devices and the creation of UI pages for these purposes, independent of device type.<br/>&nbsp;&nbsp;&nbsp;&nbsp; Outside of work and study, I enjoy learning about history and geography, working out, learning languages, collecting, and traveling. I'm always eager to collaborate on new projects, so please don't hesitate to <a href=\"#contact\">get in touch</a>.",
     "aboutSkillsText":"<h2>Programming Languages</h2>Python, JavaScript, Java, C#, C++<h2>Front End</h2>HTML5, CSS3, Bootstrap 4, Angular, PrimeNG<h2>Web Frameworks</h2>Django, ASP.NET, Blazor WebAssembly, Spring Boot<h2>Desktop Frameworks</h2>Windows Forms, WPF<h2>Operating Systems</h2>Windows, Debian Linux and derivatives<h2>Database Systems</h2>PostgreSQL, MySQL, MSSQL, MongoDB<h2>Editing Software</h2>Photoshop, Sony Vegas<h2>Version Control</h2>Git",
     "readMore":"Read more",
     "close":"Close",
     "top":"Top",
     "eduList":[
         {
-            "orgLink":"https://www.unipi.gr/unipi/en/home-cs.html",
+            "orgLink":"https://www.unipi.gr/en/home/",
             "logo":"unipi.png",
             "logoAlt":"UNIPI LOGO",
             "html":"<h2>University of Piraeus</h2><h4>Department of Informatics</h4>MSc in \"Advanced Informatics and Computing Systems - Software Development and Αrtificial Intelligence\""
         },
         {
-            "orgLink":"https://www.unipi.gr/unipi/en/home-cs.html",
+            "orgLink":"https://www.unipi.gr/en/home/",
             "logo":"unipi.png",
             "logoAlt":"UNIPI LOGO",
             "html":"<h2>University of Piraeus</h2><h4>Department of Informatics</h4><h5>BSc in Computer Science</h5>Grade: 8.20/10"
         },
         {
-            "orgLink":"https://www.linkedin.com/in/vasilis-smiris-1010401ab/details/certifications/",
+            "orgLink":"https://www.linkedin.com/in/vasilis-smyris-1010401ab/details/certifications/",
             "logo":"linkedin.png",
             "logoAlt":"LinkedIn In Logo",
-            "html":"<h2>LinkedIn&trade; Learning</h2>Completed 23 courses, covering front-end development, back-end development, C#, best practices and other topics.<br/><span>View certificate list <a href=\"https://www.linkedin.com/in/vasilis-smiris-1010401ab/details/certifications/\" target=\"_blank\">here</a>.</span>"
+            "html":"<h2>LinkedIn&trade; Learning</h2>Completed 27 courses, covering full-stack development, networks, databases, best practices and other topics.<br/><span>View certificate list <a href=\"https://www.linkedin.com/in/vasilis-smyris-1010401ab/details/certifications/\" target=\"_blank\">here</a>.</span>"
         },
         {
             "orgLink":"https://gfoss.eu/",
@@ -82,7 +82,7 @@
             "id":"smart-home-thesis",
             "title": "Smart Home University Thesis",
             "summary": "This is my university thesis. The topic is smart home systems. The system of the project consist of a smart home hub web app and a protype RGB light smart device.",
-            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/University-Thesis-Smart-Home\">https://github.com/BillSmiris/University-Thesis-Smart-Home</a>",
+            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/University-Thesis-Smart-Home\" target=\"_blank\">https://github.com/BillSmiris/University-Thesis-Smart-Home</a>",
             "technologies": "Blazor Webassembly, C#, Python, Raspberry Pi, HTML5, CSS3, JS, PostgreSQL",
             "points": [
                 "Smart home application developed for my university thesis.",
@@ -100,7 +100,7 @@
             "id":"parking",
             "title": "ParKing",
             "summary": "Parking Android app. The app enables users to easily view nearby parking facilities and relevant information, allowing them to quickly compare the options and find the one that best suits them.",
-            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/ParKing\">https://github.com/BillSmiris/ParKing</a></br><a href=\"https://drive.google.com/file/d/1QcLIcdSZaY7fEGl6LBtVU52dZgJb4Qqw/view?usp=sharing\" target=\"_blank\" class=\"fw-bold\">Web app demo video</a>",
+            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/ParKing\" target=\"_blank\">https://github.com/BillSmiris/ParKing</a></br><a href=\"https://drive.google.com/file/d/1QcLIcdSZaY7fEGl6LBtVU52dZgJb4Qqw/view?usp=sharing\" target=\"_blank\" class=\"fw-bold\">Web app demo video</a>",
             "technologies": "Android Studio, Java, Google Firebase",
             "points": [
                 "Parking Android application made for a university project.",
@@ -113,7 +113,7 @@
             "id":"sandbox",
             "title": "Unity Scripting Demo",
             "summary": "Small demo made to get familiar with Unity scripting. In the demo, players can control a first-person character and interact with various objects in the environment.",
-            "get": "Demo available <a href=\"https://drive.google.com/file/d/1_4Cv_sLoWSC2ogZUZnQPO2hfmqGqB20G/view?usp=share_link\">here</a>",
+            "get": "Demo available <a href=\"https://drive.google.com/file/d/1_4Cv_sLoWSC2ogZUZnQPO2hfmqGqB20G/view?usp=share_link\" target=\"_blank\">here</a>",
             "technologies": "Unity, C#",
             "points": [
                 "Small project made to get familiar with scripting in the Unity game engine.",
@@ -129,7 +129,7 @@
             "id":"edu1821",
             "title": "Educational App",
             "summary": "Educational application made for a university project.Through the application, users can learn about the faces of the Greek War of Independence and evaluate their knowledge via tests. Desktop and web version available.",
-            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/Educational-Application\">https://github.com/BillSmiris/Educational-Application</a></br><a href=\"https://drive.google.com/file/d/1WX2GmOwCyjYZDb25NqytJ74Ja-o7oZIi/view?usp=drive_link\" target=\"_blank\" class=\"fw-bold\">Web app demo video</a></br><a href=\"https://drive.google.com/file/d/1mBzGLmV3gFxuqUUw01D4lj2VlFS2Q5QY/view?usp=drive_link\" target=\"_blank\" class=\"fw-bold\">Desktop app demo video</a>",
+            "get": "<b>Github:</b> <a href=\"https://github.com/BillSmiris/Educational-Application\" target=\"_blank\">https://github.com/BillSmiris/Educational-Application</a></br><a href=\"https://drive.google.com/file/d/1WX2GmOwCyjYZDb25NqytJ74Ja-o7oZIi/view?usp=drive_link\" target=\"_blank\" class=\"fw-bold\">Web app demo video</a></br><a href=\"https://drive.google.com/file/d/1mBzGLmV3gFxuqUUw01D4lj2VlFS2Q5QY/view?usp=drive_link\" target=\"_blank\" class=\"fw-bold\">Desktop app demo video</a>",
             "technologies": "WPF, ASP.NET, C#, HTML5, CSS3, JS, PostgreSQL",
             "points": [
                 "Educational application made for a university project.",
@@ -143,7 +143,7 @@
             "id":"cslab",
             "title": "CSLab Website",
             "summary": "Informational website made for the computer labs of the Department of Informatics of the University of Piraeus. Through the website, students can get informed about the operation of the labs and get access to university digital services.",
-            "get": "<b>URL:</b> <a href=\"https://cslab.unipi.gr\">https://cslab.unipi.gr</a>",
+            "get": "<b>URL:</b> <a href=\"https://cslab.unipi.gr\" target=\"_blank\">https://cslab.unipi.gr</a>",
             "technologies": "HTML5, CSS3, JS, Bootstrap4, Python, Django",
             "points": [
                 "Website made by the Computer Labs Administrator Team of the Department of Informatics of the University of Piraeus.",
