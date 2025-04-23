@@ -2,208 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <title>Vasilis Smyris</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="dark-theme-component">
-    <div id="loading-screen">
-        Loading...
+<body>
+    <div class="top">
+        <h1>Vasilis Smyris</h1>
+        <h2>Full-stack Software Developer</h2>
+        I build robust systems, elegant UIs, and projects that scale—from IoT to full-stack platforms.
     </div>
-
-    <header>
-        <div class="text-center" id="hero">
-            <h1 class="display-5 fw-bold translatable" data-translationTag="welcome">Welcome to my website!</h1>
-            <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4 translatable" data-translationTag="heroText">My name is Vasilis Smyris. I am a full-stack software developer from Greece, with a passion for efficient, scalable and user-friendly software.</p>
-                <a class="btn btn-dark translatable" data-translationTag="requestCV" href="mailto:billyssmiris@gmail.com?subject=Request for CV&body=Dear Vasili,%0D%0A%0D%0AI am interested in learning more about your qualifications and experience, and would greatly appreciate it if you could send me a copy of your CV.%0D%0A%0D%0AThank you for your time and consideration.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]" role="button">Request CV</a>
-                <a class="btn btn-dark translatable" href="#contact" role="button" data-translationTag="contactMe">Contact me</a>
-            </div>
-        </div>
-    </header>
-
-    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand translatable" href="#" data-translationTag="brandText">Vasilis Smyris</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-      
-            <div class="collapse navbar-collapse" id="main-navbar">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    
-                    <li class="nav-item">
-                        <a class="nav-link translatable" href="#about" data-translationTag="aboutMe">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link translatable" href="#education" data-translationTag="education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link translatable" href="#work" data-translationTag="workExperience">Work Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link translatable" href="#projects" data-translationTag="projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#apps" data-translationTag="projects">Apps</a>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    <button class="btn btn-dark" type="button" id="dark-theme-btn">
-                        <i class="bi bi-moon"></i>
-                    </button>
-                    <div class="dropdown">
-                        <button class="btn btn-dark dropdown-toggle" type="button" id="langDropDownBtn" data-bs-toggle="dropdown" aria-expanded="false">
-                          
-                        </button>
-                        <ul id="lang-list" class="dropdown-menu" aria-labelledby="langDropDownBtn">
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <section class="info-section" id="about">
-            <div class="container">
-                <h1 class="translatable" data-translationTag="aboutMe">About Me</h1>
-                <ul class="nav nav-tabs about-tabs">
-                    <li class="nav-item">
-                      <button class="nav-link active translatable" data-target="about-summary" data-translationTag="summary">Summary</button>
-                    </li>
-                    <li class="nav-item">
-                      <button class="nav-link translatable" data-target="about-skills" data-translationTag="skills">Skills</button>
-                    </li>
-                </ul>
-                <div class="scrollable-div about-scrollable-div">
-                    <div class="scrollable-div-content">
-                        <p id="about-summary" class="translatable" data-translationTag="aboutSummaryText">
-                        </p>
-                        <div id="about-skills" class="d-none translatable" data-translationTag="aboutSkillsText">
-                        </div>
-                    </div>
-                </div>
-                <a class="section-control next-section-arrow section-control-light" href="#education"><i class="bi bi-arrow-down-short"></i></a>
-                <a class="section-control frame-section section-control-light" href="#about"><i class="bi bi-app"></i></a>
-            </div>
-        </section>
-        <section class="info-section info-section-gray" id="education">
-            <div class="container h100p">
-                <h1 class="translatable" data-translationTag="education">Education</h1>
-                <div class="edu-container">
-                </div>
-                <a class="section-control next-section-arrow section-control section-control-dark" href="#work"><i class="bi bi-arrow-down-short"></i></a>
-                <a class="section-control frame-section section-control-dark" href="#education"><i class="bi bi-app"></i></a>
-            </div>
-        </section>
-        <section class="info-section" id="work">
-            <div class="container">
-                <h1 class="translatable" data-translationTag="workExperience">Work Experience</h1>
-                <div class="scrollable-div work-scrollable-div">
-                    <div class="scrollable-div-content">
-                    </div>
-                <a class="section-control next-section-arrow section-control-light" href="#projects"><i class="bi bi-arrow-down-short"></i></a>
-                <a class="section-control frame-section section-control-light" href="#work"><i class="bi bi-app"></i></a>
-            </div>
-        </section>
-        <section class="info-section info-section-gray" id="projects">
-            <div class="container">
-                <h1 class="translatable" data-translationTag="projects">Projects</h1>
-                <div class="d-flex d-md-none mobile-version-placeholder">
-                    Mobile version unavailable.
-                </div>
-                <div class="project-card-container d-none d-md-flex mt-3">
-                    <div id="carouselExampleControls" class="carousel carousel-dark slide h100p">
-                        <div class="carousel-inner h100p">
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-                <a class="section-control next-section-arrow section-control section-control-dark" href="#apps"><i class="bi bi-arrow-down-short"></i></a>
-                <a class="section-control frame-section section-control-dark" href="#projects"><i class="bi bi-app"></i></a>
-            </div>
-        </section>
-        <section class="info-section" id="apps">
-            <div class="container">
-                <h1>Apps</h1>
-                <div class="scrollable-div app-scrollable-div">
-                    <div class="scrollable-div-content app-scrollable-div-content">
-                        <div class="app-tile">
-                            <div id="shape-playground-icon" class="app-icon" data-app="/shape-playground/"></div>
-                            <div class="app-title">Shape Playground</div>
-                        </div>
-                        <div class="app-tile">
-                            <div id="world-countries-quiz" class="app-icon" data-app="/countries-world-quiz/"></div>
-                            <div class="app-title">World Countries Quiz</div>
-                        </div>
-                    </div>
-                </div>
-                <a class="section-control frame-section section-control-light" href="#apps"><i class="bi bi-app"></i></a>
-            </div>
-        </section>
-    </main>
-
-    <button type="button" id="openModalBtn" class="d-none" data-bs-toggle="modal" data-bs-target="#project-modal"></button>
-    <div class="modal fade modal-lg" id="project-modal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="project-title">CSLab Website</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img id="project-img" src="" alt="...">
-                    <div id="project-get"></div>
-                    <p><strong><span class="translatable" data-translationTag="technologiesUsed">Technologies used</span>:</strong>  <span id="project-technologies"></span></p>
-                    <p id="project-summary"></p>
-                    <h5 class="translatable" data-translationTag="projectPoints">Project points</h5>
-                    <ul id="project-points">
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary translatable" data-bs-dismiss="modal" data-translationTag="close">Close</button>
-                </div>
-            </div>
+    <div class="middle">
+        <div class="line-container">
+            <a href="/apps" class="line line-red">
+                <i class="bi bi-app"></i>
+                <span>Apps</span>
+            </a>
+            <a href="/projects" class="line line-orange">
+                <i class="bi bi-tools"></i>
+                <span>Projects</span> 
+            </a>
+            <a href="/cv" class="line line-blue">
+                <i class="bi bi-file-earmark-person"></i>
+                <span>CV</span>
+            </a>
         </div>
     </div>
-
-    <footer class="bg-dark text-center text-white">
-        <div class="container p-4 pb-0">
-            <a class="translatable" href="#" id="top-link" data-translationTag="top">Top</a>
-            <span class="translatable" data-translationTag="contactMe">Contact me</span>:
-            <section class="mb-4" id="contact">
-                <a class="footer-icon-link" href="https://www.linkedin.com/in/vasilis-smiris-1010401ab/" target="_blank">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <a class="footer-icon-link" href="https://github.com/BillSmiris" target="_blank">
-                    <i class="bi bi-github"></i>
-                </a>
-                <a class="footer-icon-link" href="mailto:vasilissmyris@vasilissmyris.com">
-                    <i class="bi bi-envelope-at"></i>
-                </a>
-            </section>
+    <div class="bottom">
+        <div class="contact-icon-container">
+            <a class="contact-icon" href="https://www.linkedin.com/in/vasilis-smiris-1010401ab/" target="_blank">
+                <i class="bi bi-linkedin color-blue"></i>
+            </a>
+            <a class="contact-icon" href="https://github.com/BillSmiris" target="_blank">
+                <i class="bi bi-github color-orange"></i>
+            </a>
+            <a class="contact-icon" href="mailto:vasilissmyris@vasilissmyris.com">
+                <i class="bi bi-envelope-at color-red"></i>
+            </a>
         </div>
-        <div class="text-center p-3" id="copyright-band">
-          © 2022 Copyright: Vasilis Smyris
-          <div>Flag icons provided by <a class="freepik" href="https://www.flaticon.com/packs/international-flags-6" target="_blank">Freepik</a></div>
-          <div>Powered by <a class="footer-bootstrap-link" href="https://getbootstrap.com/" target="_blank"><i class="bi bi-bootstrap-fill"></i> Bootstrap</a></div>
-        </div>
-    </footer>
-
-    <script src="js/bootstrap.bundle.min.js">
-    </script>
-    <script src="js/scripts.js">
-    </script>
+        <span>© 2025 Copyright: Vasilis Smyris</span>
+    </div>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

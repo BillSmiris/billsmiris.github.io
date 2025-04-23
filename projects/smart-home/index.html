@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Projects - Vasilis Smyris</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/projects/css/styles.css">
+    <link rel="stylesheet" href="/projects/css/project-styles.css">
+</head>
+
+<body class="page-body">
+    <header>
+        <a href="/" class="logo">
+            <img src="/favicon.ico" alt="logo" height="30px" />
+            Vasilis Smyris
+        </a>
+        <div class="nav">
+            <a href="/cv" class="nav-item">CV</a>
+            <a href="/projects" class="nav-item">Projects</a>
+            <a href="/apps" class="nav-item">Apps</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-title">
+            <i class="bi bi-tools watermark"></i>
+            Smart Home University Thesis
+        </div>
+
+        <div class="project-info">
+            <div class="image">
+                <img src="/projects/images/smart-home-thesis.jpg" alt="">
+            </div>
+            <div class="details">
+                <span>Github: <a href="https://github.com/BillSmiris/University-Thesis-Smart-Home" target="_blank">https://github.com/BillSmiris/University-Thesis-Smart-Home</a></span>
+                <a href="https://drive.google.com/file/d/1W1HzDxU1pfBDhoPlW8Q-P12rJPRvWf8_/view?usp=share_link" target="_blank" class="bold">Demonstration Video</a>
+                <span>Technologies used: Blazor Webassembly, C#, Python, Raspberry Pi, HTML5, CSS3, JS, PostgreSQL</span>
+                <span>This is my university thesis. The topic is smart home systems. The system of the project consist of a smart home hub web app and a protype RGB light smart device.</span>
+            </div>
+        </div>
+        <h1>Project Points</h1>
+        <ul>
+            <li>Developed as a university thesis, this smart home application consists of a Blazor WebAssembly web hub and a prototype smart RGB light device.</li>
+            <li>The application is intended for deployment on a local network and is accessible through any web browser to manage a smart device ecosystem.</li>
+            <li>The prototype device uses a Raspberry Pi running a Python script to control a basic RGB lamp circuit.</li>
+            <li>The device script serves as a template for creating future smart device behaviors.</li>
+            <li>The smart hub supports control of a variable number of devices, generating UI elements dynamically based on device metadata and supported property types.</li>
+            <li>Communication between the hub and devices is handled via the WebSockets protocol, enabling real-time control.</li>
+            <li>Additional features include user account support and a UI theme toggle (light/dark mode).</li>
+        </ul>
+    </main>
+
+    <footer>
+        <div class="contact-icon-container">
+            <a class="contact-icon" href="https://www.linkedin.com/in/vasilis-smiris-1010401ab/" target="_blank">
+                <i class="bi bi-linkedin color-blue"></i>
+            </a>
+            <a class="contact-icon" href="https://github.com/BillSmiris" target="_blank">
+                <i class="bi bi-github color-orange"></i>
+            </a>
+            <a class="contact-icon" href="mailto:vasilissmyris@vasilissmyris.com">
+                <i class="bi bi-envelope-at color-red"></i>
+            </a>
+        </div>
+        <span>© 2025 Copyright: Vasilis Smyris</span>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
