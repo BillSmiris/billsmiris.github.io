@@ -1,0 +1,68 @@
+.page-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    background-color: var(--vs-blue);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+section {
+    margin: 2rem 0;
+}
+
+h1 {
+   font-size: 1.5rem;
+   font-weight: bold;
+}
+
+.spaced {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.spaced span:first-child {
+    font-weight: bold;
+} 
+
+ul {
+    list-style: circle;
+}
+
+li {
+    margin: 1rem;
+}
+
+.gutter {
+    margin: 2rem 0;
+}
+
+.edu {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.mb {
+    margin-bottom: .5rem;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .spaced {
+        justify-content: start;
+        flex-wrap: wrap;
+        gap: .2rem;
+    }
+
+    .spaced * {
+        width: 100%;
+    }
+}
