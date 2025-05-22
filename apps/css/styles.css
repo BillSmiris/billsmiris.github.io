@@ -151,3 +151,7 @@ h1 {
     font-size: 2rem;
     font-weight: bold;
 }
+
+#old-site-link {
+    color: blue;
+}
