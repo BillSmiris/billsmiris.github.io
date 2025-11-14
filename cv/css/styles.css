@@ -66,9 +66,9 @@ li {
     margin: 1rem;
 }
 
-.gutter {
+/* .gutter {
     margin: 2rem 0;
-}
+} */
 
 .edu {
     display: flex;
@@ -180,4 +180,8 @@ li {
     .print-btn-container {
         display: none;
     }
+}
+
+article {
+    margin: 2rem 0;
 }
