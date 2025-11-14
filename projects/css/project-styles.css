@@ -51,3 +51,8 @@ li {
 .bold {
     font-weight: bold;
 }
+
+.backlink {
+    display: block;
+    margin: .5rem 0;
+}
