@@ -35,7 +35,7 @@ section {
     margin: 2rem 0;
 }
 
-h1 {
+h2 {
     font-size: 1.5rem;
     font-weight: bold;
     display: flex;
@@ -43,18 +43,19 @@ h1 {
     align-items: center;
 }
 
-h1>i {
+h2 > i {
     font-size: 2rem;
 }
 
 .spaced {
+    width: 100%;
     font-size: 1.2rem;
     display: flex;
     justify-content: space-between;
     margin-bottom: .5rem;
 }
 
-.spaced span:first-child {
+.spaced > h3 {
     font-weight: bold;
 }
 
@@ -65,10 +66,6 @@ ul {
 li {
     margin: 1rem;
 }
-
-/* .gutter {
-    margin: 2rem 0;
-} */
 
 .edu {
     display: flex;
@@ -127,6 +124,7 @@ li {
 @media print {
     body {
         color: black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
     }
 
     header,
@@ -169,8 +167,16 @@ li {
         min-height: 1px;
     }
 
+    .print-helper-4 {
+        margin: 4rem 0;
+    }
+
     .print-helper-3 {
         margin: 3rem 0;
+    }
+
+    .print-helper-2 {
+        margin: 2rem 0;
     }
 
     .print-helper-1 {
@@ -180,8 +186,22 @@ li {
     .print-btn-container {
         display: none;
     }
+
+    .spaced > span {
+        font-size: 1.1rem;
+    }
 }
 
 article {
     margin: 2rem 0;
+}
+
+.skills dt {
+    font-weight: 600;
+    text-decoration: underline;
+    margin-bottom: 0.1rem;
+}
+
+.skills dd {
+    margin-bottom: 0.6rem;
 }
